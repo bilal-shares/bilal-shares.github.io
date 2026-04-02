@@ -1,0 +1,3014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2308060e%27/%3E%3Crect x=%271%27 y=%271%27 width=%2762%27 height=%2762%27 rx=%2713%27 fill=%27none%27 stroke=%27%23c9a84c%27 stroke-width=%272%27/%3E%3Ctext x=%2750%25%27 y=%2754%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-family=%27Georgia,serif%27 font-size=%2736%27 font-weight=%27700%27 fill=%27%23c9a84c%27%3ES%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#08060e">
+<title>Social Media Management — Bilal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="slay.css">
+<style>
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8cc80;
+  --gold-dim: rgba(201,168,76,0.15);
+  --ink: #08060e;
+  --ink2: #110d1e;
+  --mist: #1d1730;
+  --text: #e8e4f0;
+  --text-dim: #8a8098;
+  --white: #ffffff;
+  --accent: #7c3aed;
+  --accent2: #a855f7;
+  --transition-theme: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ===== LIGHT THEME ===== */
+body.light {
+  --ink: #f5f3ef;
+  --ink2: #ede9e2;
+  --mist: #ffffff;
+  --text: #1a1625;
+  --text-dim: #6b6278;
+  --white: #1a1625;
+  --accent: #6d28d9;
+  --accent2: #9333ea;
+}
+
+body.light {
+  background: var(--ink);
+  color: var(--text);
+}
+
+body.light::before { opacity: 0.15; }
+
+body.light header.scrolled {
+  background: rgba(245,243,239,0.94) !important;
+  border-bottom: 1px solid rgba(201,168,76,0.15) !important;
+}
+
+body.light .hero-bg-circle:nth-child(1) {
+  background: radial-gradient(circle, rgba(109,40,217,0.12) 0%, transparent 70%);
+}
+body.light .hero-bg-circle:nth-child(2) {
+  background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+}
+body.light .hero-bg-circle:nth-child(3) {
+  background: radial-gradient(circle, rgba(147,51,234,0.08) 0%, transparent 70%);
+}
+
+body.light .grid-lines {
+  background-image:
+    linear-gradient(rgba(201,168,76,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.07) 1px, transparent 1px);
+}
+
+body.light .hero h1 { color: #1a1625; }
+body.light .hero-stat { background: rgba(245,243,239,0.9); }
+body.light .hero-stat-num { color: var(--gold); }
+
+body.light .platform-card {
+  background: rgba(255,255,255,0.95) !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+body.light .pc-title { color: #1a1625; }
+body.light .main-title { color: #1a1625; }
+
+body.light .marquee-section {
+  background: linear-gradient(90deg, rgba(201,168,76,0.05) 0%, rgba(124,58,237,0.04) 100%);
+  border-color: rgba(0,0,0,0.07);
+}
+
+body.light .services-section { background: var(--ink); }
+body.light .services-grid { background: rgba(0,0,0,0.06); }
+body.light .service-tile { background: #faf9f6; }
+body.light .service-tile:hover { background: #ffffff; }
+body.light .service-tile h3 { color: #1a1625; }
+body.light .service-tile p { color: var(--text-dim); }
+body.light .feat-tag {
+  background: rgba(201,168,76,0.1);
+  border-color: rgba(201,168,76,0.2);
+  color: #8a6a20;
+}
+
+body.light .why-section { background: #ede9e2; }
+body.light .why-inner { }
+body.light .why-badge { background: #ffffff; border-color: rgba(201,168,76,0.3); }
+body.light .why-point { border-color: rgba(0,0,0,0.07); }
+body.light .why-point-icon { border-color: rgba(201,168,76,0.25); }
+body.light .why-point-title { color: #1a1625; }
+
+body.light .process-section { background: var(--ink); }
+body.light .step-num { background: #faf9f6; color: var(--gold); border-color: rgba(201,168,76,0.3); }
+body.light .process-step:hover .step-num { background: var(--gold); color: #fff; }
+body.light .process-step h4 { color: #1a1625; }
+
+body.light .proof-section { background: #ede9e2; }
+body.light .proof-card { background: #ffffff; border-color: rgba(0,0,0,0.07); }
+body.light .proof-card:hover { border-color: rgba(201,168,76,0.25); }
+body.light .proof-name { color: #1a1625; }
+
+body.light .faq-section { background: var(--ink); }
+body.light .faq-item { border-color: rgba(0,0,0,0.08); }
+body.light .faq-q h4 { color: #1a1625; }
+body.light .faq-q:hover h4 { color: var(--gold); }
+body.light .faq-toggle { border-color: rgba(0,0,0,0.12); color: var(--text-dim); }
+
+body.light .announcements-section { background: #ede9e2; }
+body.light .ann-card { border-color: rgba(0,0,0,0.08); }
+body.light .ann-card.featured {
+  background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(124,58,237,0.06) 100%);
+  border-color: rgba(201,168,76,0.3);
+}
+body.light .ann-small { background: #ffffff; border-color: rgba(0,0,0,0.07); }
+body.light .ann-card h3 { color: #1a1625; }
+body.light .ann-small h4 { color: #1a1625; }
+
+body.light .contact-section { background: var(--ink); }
+body.light .contact-card { background: #ffffff; border-color: rgba(0,0,0,0.07); }
+body.light .contact-card h4 { color: #1a1625; }
+
+body.light .contact-form-wrap {
+  background: rgba(255,255,255,0.92);
+  border-color: rgba(201,168,76,0.22);
+}
+body.light .form-heading { color: #1a1625; }
+body.light .form-group input,
+body.light .form-group select,
+body.light .form-group textarea {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.12);
+  color: #1a1625;
+}
+body.light .form-group input::placeholder,
+body.light .form-group textarea::placeholder { color: rgba(0,0,0,0.3); }
+body.light .form-group select option { background: #fff; color: #1a1625; }
+body.light .form-group input:focus,
+body.light .form-group select:focus,
+body.light .form-group textarea:focus {
+  border-color: rgba(201,168,76,0.5);
+  background: rgba(201,168,76,0.04);
+}
+
+body.light footer { background: #ede9e2; border-color: rgba(0,0,0,0.07); }
+body.light .footer-inner { border-color: rgba(0,0,0,0.07); }
+body.light .footer-social { border-color: rgba(0,0,0,0.1); }
+body.light .mobile-menu { background: rgba(245,243,239,0.97); }
+body.light .mobile-menu a { color: #1a1625; border-color: rgba(0,0,0,0.06); }
+
+body.light .cursor { background: #8a6a20; }
+body.light .cursor-ring { border-color: rgba(138,106,32,0.4); }
+
+/* Theme toggle button */
+.theme-toggle {
+  width: 44px; height: 24px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s, border-color 0.3s;
+  flex-shrink: 0;
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
+}
+.theme-toggle:hover { border-color: var(--gold); }
+.theme-toggle-knob {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  position: relative;
+  transition: transform 0.35s cubic-bezier(.23,1,.32,1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; color: var(--ink);
+  left: 0;
+}
+body.light .theme-toggle-knob { transform: translateX(20px); }
+body.light .theme-toggle { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.4); }
+
+/* 3D Canvas */
+#hero3d {
+  position: absolute; inset: 0; z-index: 1;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Section 3d accent */
+.three-accent {
+  position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 320px; height: 320px;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+body.light #hero3d { opacity: 0.35; }
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom Cursor */
+.cursor {
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed; pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%,-50%);
+  transition: width .2s, height .2s, background .2s;
+  mix-blend-mode: screen;
+}
+.cursor-ring {
+  width: 40px; height: 40px;
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 50%;
+  position: fixed; pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%,-50%);
+  transition: all .12s ease-out;
+}
+body:hover .cursor { opacity:1; }
+
+/* Noise Overlay */
+body::before {
+  content:'';
+  position: fixed; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index:0;
+  opacity: 0.4;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed; top:0; width:100%; z-index:1000;
+  padding: 28px 0;
+  transition: all .5s ease;
+}
+header.scrolled {
+  background: rgba(8,6,14,0.92);
+  backdrop-filter: blur(20px);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.nav-wrap {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 40px;
+  display: flex; align-items:center; justify-content:space-between;
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.logo em { color: var(--gold); font-style: normal; }
+.nav-links { display:flex; gap:48px; list-style:none; }
+.nav-links a {
+  color: var(--text-dim); text-decoration:none;
+  font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight:500;
+  transition: color .3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  padding: 12px 28px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all .3s;
+  font-weight: 500;
+}
+.nav-cta:hover { background: var(--gold); color: var(--ink); }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items:center;
+  position: relative; overflow: hidden;
+  padding: 140px 0 80px;
+}
+
+.hero-bg {
+  position: absolute; inset:0; z-index:0;
+}
+.hero-bg-circle {
+  position:absolute;
+  border-radius:50%;
+  filter: blur(100px);
+  animation: breathe 8s ease-in-out infinite alternate;
+}
+.hero-bg-circle:nth-child(1) {
+  width:600px; height:600px;
+  background: radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%);
+  top:-100px; right:-150px;
+}
+.hero-bg-circle:nth-child(2) {
+  width:500px; height:500px;
+  background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+  bottom:-100px; left:-100px;
+  animation-delay: -4s;
+}
+.hero-bg-circle:nth-child(3) {
+  width:300px; height:300px;
+  background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%);
+  top:40%; left:40%;
+  animation-delay: -2s;
+}
+@keyframes breathe {
+  from { transform: scale(1) rotate(0deg); opacity:0.6; }
+  to { transform: scale(1.15) rotate(15deg); opacity:1; }
+}
+
+/* Animated grid lines */
+.grid-lines {
+  position:absolute; inset:0;
+  background-image: 
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-inner {
+  max-width:1200px; margin:0 auto; padding:0 40px;
+  position: relative; z-index:2;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items:center;
+}
+
+.hero-tag {
+  display: inline-flex; align-items:center; gap:10px;
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 8px 18px; border-radius:100px;
+  font-size: 12px; letter-spacing:2px;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 32px;
+  background: rgba(201,168,76,0.05);
+}
+.hero-tag span {
+  width:6px; height:6px; border-radius:50%;
+  background: var(--gold);
+  animation: blink 1.5s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+.hero h1 strong {
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+.hero-desc {
+  color: var(--text-dim); font-size:1.05rem;
+  line-height:1.8; margin-bottom: 48px;
+  max-width: 480px;
+}
+
+.hero-actions { display:flex; gap:20px; align-items:center; }
+.btn-primary {
+  display: inline-flex; align-items:center; gap:12px;
+  padding: 18px 40px;
+  background: linear-gradient(135deg, var(--gold), #a8722a);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600; font-size:14px;
+  letter-spacing:1.5px; text-transform:uppercase;
+  position:relative; overflow:hidden;
+  transition: transform .3s, box-shadow .3s;
+}
+.btn-primary::before {
+  content:'';
+  position:absolute; inset:0;
+  background: linear-gradient(135deg, #fff2 0%, transparent 100%);
+  opacity:0; transition: opacity .3s;
+}
+.btn-primary:hover::before { opacity:1; }
+.btn-primary:hover { transform:translateY(-3px); box-shadow: 0 20px 50px rgba(201,168,76,0.35); }
+
+.btn-ghost {
+  display:inline-flex; align-items:center; gap:8px;
+  color: var(--text-dim); text-decoration:none;
+  font-size:14px; letter-spacing:1px;
+  transition: color .3s;
+}
+.btn-ghost:hover { color: var(--white); }
+.btn-ghost i { font-size:12px; }
+
+.hero-stats {
+  display:grid; grid-template-columns: repeat(3,1fr);
+  gap:1px; margin-top: 64px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.06);
+}
+.hero-stat {
+  background: rgba(8,6,14,0.8);
+  padding: 28px 24px;
+  backdrop-filter: blur(10px);
+}
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-weight:700;
+  color: var(--gold); line-height:1;
+  margin-bottom:6px;
+}
+.hero-stat-label {
+  font-size:11px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--text-dim);
+}
+
+/* Hero right - visual */
+.hero-visual {
+  position: relative;
+}
+.hero-card-stack {
+  position:relative; height: 520px;
+}
+.platform-card {
+  position:absolute;
+  background: rgba(29,23,48,0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 24px 28px;
+  transition: all .6s cubic-bezier(.23,1,.32,1);
+}
+.platform-card.main {
+  width: 320px; top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  border-color: rgba(201,168,76,0.2);
+  background: rgba(29,23,48,0.95);
+  z-index:5;
+}
+.platform-card.c1 { width:200px; top:5%; left:0; transform:rotate(-8deg); z-index:3; }
+.platform-card.c2 { width:180px; top:8%; right:0; transform:rotate(7deg); z-index:3; }
+.platform-card.c3 { width:200px; bottom:5%; left:5%; transform:rotate(5deg); z-index:3; }
+.platform-card.c4 { width:190px; bottom:8%; right:0; transform:rotate(-6deg); z-index:3; }
+
+.platform-card:hover { transform:translateY(-8px) rotate(0deg) !important; z-index:10 !important; }
+
+.pc-icon { font-size:28px; margin-bottom:12px; }
+.pc-title { font-weight:600; font-size:15px; margin-bottom:4px; color:var(--white); }
+.pc-sub { font-size:12px; color:var(--text-dim); }
+.pc-bar { height:3px; border-radius:2px; margin-top:14px; background: rgba(255,255,255,0.08); overflow:hidden; }
+.pc-bar-fill { height:100%; border-radius:2px; width:0; transition: width 1.5s ease 0.5s; }
+
+.ig-color { color:#E1306C; }
+.tt-color { color:#fff; }
+.yt-color { color:#FF0000; }
+.fb-color { color:#1877F2; }
+.tg-color { color:#0088cc; }
+
+.ig-bar { background: linear-gradient(90deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+.tt-bar { background: linear-gradient(90deg,#69C9D0,#EE1D52); }
+.yt-bar { background: linear-gradient(90deg,#FF0000,#cc0000); }
+.fb-bar { background: linear-gradient(90deg,#1877F2,#42b72a); }
+.tg-bar { background: linear-gradient(90deg,#0088cc,#00c6ff); }
+
+.main-platform-icons { display:flex; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+.mpi {
+  width:44px; height:44px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; background: rgba(255,255,255,0.05);
+  transition: background .3s;
+}
+.mpi:hover { background: rgba(201,168,76,0.15); }
+.main-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--white); margin-bottom:6px; }
+.main-sub { font-size:12px; color:var(--text-dim); margin-bottom:18px; }
+.growth-indicator {
+  display:flex; align-items:center; gap:8px;
+  font-size:13px; color:#4ade80;
+  background: rgba(74,222,128,0.08);
+  border: 1px solid rgba(74,222,128,0.15);
+  padding:8px 14px; border-radius:8px;
+}
+
+/* Floating particles */
+.particle {
+  position:absolute; border-radius:50%;
+  pointer-events:none; z-index:1;
+  animation: float-up linear infinite;
+}
+@keyframes float-up {
+  0% { transform:translateY(0) scale(1); opacity:0.6; }
+  100% { transform:translateY(-100vh) scale(0); opacity:0; }
+}
+
+/* ===== SECTION COMMONS ===== */
+.section { padding: 120px 0; position:relative; }
+.container { max-width:1200px; margin:0 auto; padding:0 40px; }
+
+.section-label {
+  display:inline-flex; align-items:center; gap:12px;
+  font-size:11px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--gold); margin-bottom: 20px;
+}
+.section-label::before {
+  content:''; width:32px; height:1px; background:var(--gold);
+}
+.section-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size: clamp(2.2rem,4vw,3.5rem);
+  font-weight:300; color:var(--white); line-height:1.15;
+  margin-bottom: 20px;
+}
+.section-title strong { font-weight:700; color:var(--gold); }
+
+/* ===== MARQUEE ===== */
+.marquee-section {
+  padding: 28px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  overflow:hidden;
+  background: linear-gradient(90deg, rgba(201,168,76,0.03) 0%, rgba(124,58,237,0.03) 100%);
+}
+.marquee-track {
+  display:flex; gap:60px; white-space:nowrap;
+  animation: marquee 20s linear infinite;
+}
+.marquee-section:hover .marquee-track { animation-play-state:paused; }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.marquee-item {
+  display:flex; align-items:center; gap:14px;
+  font-size:13px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--text-dim); flex-shrink:0;
+}
+.marquee-item i { color:var(--gold); font-size:16px; }
+
+/* ===== SERVICES ===== */
+.services-section { background: var(--ink); }
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background: rgba(255,255,255,0.05);
+  margin-top: 70px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.service-tile {
+  background: var(--ink);
+  padding: 48px 36px;
+  position:relative; overflow:hidden;
+  transition: background .4s;
+  cursor: default;
+}
+.service-tile::before {
+  content:'';
+  position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+  opacity:0; transition:opacity .4s;
+}
+.service-tile::after {
+  content:'';
+  position:absolute; bottom:0; left:0;
+  width:0; height:2px;
+  background: linear-gradient(90deg, var(--gold), var(--accent2));
+  transition: width .6s cubic-bezier(.23,1,.32,1);
+}
+.service-tile:hover { background: rgba(29,23,48,0.8); }
+.service-tile:hover::before { opacity:1; }
+.service-tile:hover::after { width:100%; }
+
+.service-tile-num {
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem; font-weight:700;
+  color: rgba(201,168,76,0.08);
+  position:absolute; top:24px; right:28px;
+  line-height:1;
+  transition: color .4s;
+}
+.service-tile:hover .service-tile-num { color:rgba(201,168,76,0.14); }
+
+.service-icon-wrap {
+  width:64px; height:64px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius:16px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:26px;
+  margin-bottom:28px;
+  transition: border-color .4s, background .4s;
+}
+.service-tile:hover .service-icon-wrap {
+  border-color: rgba(201,168,76,0.3);
+  background: rgba(201,168,76,0.05);
+}
+.service-tile h3 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem; font-weight:600;
+  color:var(--white); margin-bottom:14px;
+}
+.service-tile p { color:var(--text-dim); font-size:.9rem; line-height:1.8; }
+
+.service-features {
+  margin-top:20px; display:flex; flex-wrap:wrap; gap:8px;
+}
+.feat-tag {
+  font-size:11px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--gold); border:1px solid rgba(201,168,76,0.2);
+  padding:4px 10px; border-radius:100px;
+  background: rgba(201,168,76,0.04);
+}
+
+/* ===== WHY US ===== */
+.why-section { background: var(--ink2); }
+.why-inner {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:100px; align-items:center;
+}
+.why-visual {
+  position:relative;
+}
+.why-big-num {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(8rem,15vw,14rem);
+  font-weight:700; line-height:1;
+  background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.03));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+  user-select:none;
+}
+.why-badge {
+  position:absolute; bottom:0; right:0;
+  background:var(--mist);
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:20px;
+  padding:28px 32px;
+  backdrop-filter:blur(20px);
+}
+.why-badge-num {
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.8rem; font-weight:700; color:var(--gold);
+}
+.why-badge-text { font-size:13px; color:var(--text-dim); margin-top:4px; }
+
+.why-points { margin-top:48px; display:flex; flex-direction:column; gap:0; }
+.why-point {
+  display:flex; gap:20px; padding:24px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.why-point-icon {
+  width:44px; height:44px; flex-shrink:0;
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gold); font-size:16px;
+}
+.why-point-title { font-weight:600; color:var(--white); margin-bottom:6px; font-size:.95rem; }
+.why-point-desc { font-size:.875rem; color:var(--text-dim); line-height:1.7; }
+
+/* ===== PROCESS ===== */
+.process-section { background:var(--ink); }
+.process-steps {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0;
+  margin-top:70px;
+  position:relative;
+}
+.process-steps::before {
+  content:'';
+  position:absolute; top:36px; left:12%; right:12%;
+  height:1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity:0.3;
+}
+.process-step {
+  padding: 0 20px;
+  text-align:center;
+  position:relative;
+}
+.step-num {
+  width:72px; height:72px;
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem; font-weight:700; color:var(--gold);
+  margin:0 auto 28px;
+  background:var(--ink);
+  position:relative; z-index:2;
+  transition: all .4s;
+}
+.process-step:hover .step-num {
+  background: var(--gold);
+  color: var(--ink);
+  box-shadow: 0 0 40px rgba(201,168,76,0.4);
+}
+.process-step h4 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem; font-weight:600;
+  color:var(--white); margin-bottom:12px;
+}
+.process-step p { font-size:.875rem; color:var(--text-dim); line-height:1.8; }
+
+/* ===== TESTIMONIALS / SOCIAL PROOF ===== */
+.proof-section { background:var(--ink2); overflow:hidden; }
+.proof-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:20px; margin-top:64px;
+}
+.proof-card {
+  background:var(--mist);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:20px;
+  padding:32px 28px;
+  transition: transform .4s, border-color .4s;
+}
+.proof-card:hover {
+  transform:translateY(-8px);
+  border-color:rgba(201,168,76,0.2);
+}
+.proof-stars { display:flex; gap:4px; margin-bottom:18px; }
+.proof-stars i { color:var(--gold); font-size:14px; }
+.proof-text { font-size:.9rem; color:var(--text-dim); line-height:1.8; margin-bottom:22px; font-style:italic; }
+.proof-author { display:flex; align-items:center; gap:14px; }
+.proof-avatar {
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:600; font-size:16px; color:var(--ink);
+  flex-shrink:0;
+}
+.proof-name { font-weight:600; font-size:.9rem; color:var(--white); }
+.proof-platform { font-size:.8rem; color:var(--text-dim); }
+
+/* ===== FAQ ===== */
+.faq-section { background:var(--ink); }
+.faq-list { margin-top:64px; display:flex; flex-direction:column; gap:0; }
+.faq-item {
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  overflow:hidden;
+}
+.faq-item:first-child { border-top:1px solid rgba(255,255,255,0.06); }
+.faq-q {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:28px 0; cursor:pointer;
+  transition:color .3s;
+}
+.faq-q:hover { color:var(--gold); }
+.faq-q h4 {
+  font-size:1.05rem; font-weight:500; color:var(--white);
+  transition:color .3s; padding-right:40px;
+}
+.faq-q:hover h4 { color:var(--gold); }
+.faq-toggle {
+  width:36px; height:36px; flex-shrink:0;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--text-dim); font-size:13px;
+  transition: all .3s;
+}
+.faq-item.open .faq-toggle {
+  background:var(--gold); border-color:var(--gold); color:var(--ink);
+  transform:rotate(45deg);
+}
+.faq-a {
+  max-height:0; overflow:hidden;
+  transition:max-height .4s ease, padding .4s ease;
+}
+.faq-item.open .faq-a { max-height:200px; padding-bottom:28px; }
+.faq-a p { color:var(--text-dim); font-size:.95rem; line-height:1.8; }
+
+/* ===== ANNOUNCEMENTS ===== */
+.announcements-section { background:var(--ink2); }
+.ann-grid {
+  display:grid; grid-template-columns:1fr 2fr;
+  gap:24px; margin-top:64px;
+}
+.ann-card {
+  border-radius:20px; padding:36px 32px;
+  position:relative; overflow:hidden;
+  border:1px solid rgba(255,255,255,0.06);
+  transition: transform .4s, border-color .4s;
+}
+.ann-card:hover { transform:translateY(-6px); border-color:rgba(201,168,76,0.2); }
+.ann-card.featured {
+  background: linear-gradient(135deg, rgba(201,168,76,0.12) 0%, rgba(124,58,237,0.08) 100%);
+  border-color:rgba(201,168,76,0.25);
+}
+.ann-card.dark { background:var(--mist); }
+.ann-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--gold); margin-bottom:16px;
+  padding: 5px 12px; border-radius:100px;
+  background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.2);
+}
+.ann-card h3 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem; font-weight:600; color:var(--white); margin-bottom:12px;
+}
+.ann-card p { color:var(--text-dim); font-size:.9rem; line-height:1.8; }
+.ann-card .discount {
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem; font-weight:700; color:var(--gold);
+  line-height:1; margin:20px 0 10px;
+}
+.ann-right { display:flex; flex-direction:column; gap:24px; }
+.ann-small {
+  background:var(--mist);
+  border-radius:20px; padding:28px 28px;
+  border:1px solid rgba(255,255,255,0.06);
+  transition: transform .4s, border-color .4s;
+  display:flex; gap:20px; align-items:flex-start;
+}
+.ann-small:hover { transform:translateY(-4px); border-color:rgba(201,168,76,0.15); }
+.ann-small-icon {
+  font-size:24px; flex-shrink:0; margin-top:3px;
+}
+.ann-small h4 { color:var(--white); font-weight:600; margin-bottom:8px; }
+.ann-small p { color:var(--text-dim); font-size:.875rem; line-height:1.7; margin:0; }
+
+/* ===== CONTACT ===== */
+.contact-section {
+  background: var(--ink);
+  text-align:center;
+}
+.contact-section .section-title { text-align:center; }
+.contact-section .section-label { justify-content:center; }
+.contact-section .section-label::before { display:none; }
+.contact-section .section-label::after { content:''; width:32px; height:1px; background:var(--gold); }
+
+.contact-desc { color:var(--text-dim); max-width:540px; margin:0 auto 64px; font-size:1.05rem; line-height:1.8; }
+
+.contact-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:20px; max-width:800px; margin:0 auto;
+}
+.contact-card {
+  background:var(--mist);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:20px;
+  padding:40px 24px;
+  text-decoration:none;
+  transition: all .4s;
+  position:relative; overflow:hidden;
+}
+.contact-card::before {
+  content:'';
+  position:absolute; inset:0;
+  opacity:0; transition:opacity .4s;
+}
+.contact-card:hover { transform:translateY(-10px); }
+.contact-card:hover::before { opacity:1; }
+
+.cc-whatsapp::before { background:linear-gradient(135deg, rgba(37,211,102,0.08) 0%, transparent 70%); }
+.cc-instagram::before { background:linear-gradient(135deg, rgba(225,48,108,0.08) 0%, transparent 70%); }
+.cc-telegram::before { background:linear-gradient(135deg, rgba(0,136,204,0.08) 0%, transparent 70%); }
+.cc-whatsapp:hover { border-color:rgba(37,211,102,0.25); }
+.cc-instagram:hover { border-color:rgba(225,48,108,0.25); }
+.cc-telegram:hover { border-color:rgba(0,136,204,0.25); }
+
+.contact-card-icon {
+  font-size:36px; margin-bottom:20px; display:block;
+}
+.cc-whatsapp .contact-card-icon { color:#25D366; }
+.cc-instagram .contact-card-icon { color:#E1306C; }
+.cc-telegram .contact-card-icon { color:#0088cc; }
+
+.contact-card h4 { font-weight:600; font-size:1.1rem; color:var(--white); margin-bottom:8px; }
+.contact-card p { color:var(--text-dim); font-size:.875rem; margin:0; }
+.contact-card-arrow {
+  margin-top:20px; color:var(--text-dim); font-size:12px;
+  letter-spacing:2px; text-transform:uppercase;
+  transition:color .3s;
+}
+.contact-card:hover .contact-card-arrow { color:var(--gold); }
+
+/* ===== FOOTER ===== */
+footer {
+  background:var(--ink2);
+  border-top:1px solid rgba(255,255,255,0.05);
+  padding:60px 0 32px;
+}
+.footer-inner {
+  display:flex; justify-content:space-between; align-items:center;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  margin-bottom:32px;
+}
+.footer-logo {
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px; font-weight:600; color:var(--white);
+  text-decoration:none; letter-spacing:3px; text-transform:uppercase;
+}
+.footer-logo em { color:var(--gold); font-style:normal; }
+.footer-links { display:flex; gap:40px; list-style:none; }
+.footer-links a {
+  color:var(--text-dim); text-decoration:none;
+  font-size:13px; letter-spacing:1px;
+  transition:color .3s;
+}
+.footer-links a:hover { color:var(--gold); }
+.footer-socials { display:flex; gap:16px; }
+.footer-social {
+  width:40px; height:40px;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--text-dim); text-decoration:none;
+  font-size:16px; transition:all .3s;
+}
+.footer-social:hover { border-color:var(--gold); color:var(--gold); }
+.footer-bottom {
+  display:flex; justify-content:space-between; align-items:center;
+}
+.footer-copy { font-size:12px; color:var(--text-dim); letter-spacing:1px; }
+.footer-tag { font-size:12px; color:rgba(201,168,76,0.4); letter-spacing:1px; }
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity:0; transform:translateY(40px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:.1s; }
+.reveal-d2 { transition-delay:.2s; }
+.reveal-d3 { transition-delay:.3s; }
+.reveal-d4 { transition-delay:.4s; }
+.reveal-d5 { transition-delay:.5s; }
+
+/* ===== 3D DECORATIVE ORBS ===== */
+.orb-3d {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+}
+.orb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  pointer-events: none;
+  animation: orbit3d 8s linear infinite;
+  transform-style: preserve-3d;
+}
+@keyframes orbit3d {
+  0%   { transform: rotateX(70deg) rotateZ(0deg); }
+  100% { transform: rotateX(70deg) rotateZ(360deg); }
+}
+@keyframes orbit3d-rev {
+  0%   { transform: rotateX(60deg) rotateZ(360deg); }
+  100% { transform: rotateX(60deg) rotateZ(0deg); }
+}
+@keyframes orbit3d-tilt {
+  0%   { transform: rotateX(45deg) rotateY(20deg) rotateZ(0deg); }
+  100% { transform: rotateX(45deg) rotateY(20deg) rotateZ(360deg); }
+}
+
+.hero-orb-container {
+  position: absolute;
+  right: -60px; top: 50%;
+  transform: translateY(-50%);
+  width: 500px; height: 500px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  display: none; /* shown only on desktop */
+}
+@media(min-width:1200px) { .hero-orb-container { display:block; } }
+
+.hero-orb-container .orb-ring:nth-child(1) {
+  width: 340px; height: 340px;
+  border-color: rgba(201,168,76,0.5);
+  top: 80px; left: 80px;
+  animation-duration: 9s;
+  box-shadow: 0 0 30px rgba(201,168,76,0.1) inset;
+}
+.hero-orb-container .orb-ring:nth-child(2) {
+  width: 240px; height: 240px;
+  border-color: rgba(168,85,247,0.5);
+  top: 130px; left: 130px;
+  animation-name: orbit3d-rev;
+  animation-duration: 6s;
+}
+.hero-orb-container .orb-ring:nth-child(3) {
+  width: 440px; height: 440px;
+  border-color: rgba(201,168,76,0.18);
+  top: 30px; left: 30px;
+  animation-name: orbit3d-tilt;
+  animation-duration: 14s;
+}
+.hero-orb-core {
+  position: absolute;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.6) 0%, rgba(168,85,247,0.3) 50%, transparent 70%);
+  top: 210px; left: 210px;
+  filter: blur(12px);
+  animation: breathe 4s ease-in-out infinite alternate;
+}
+
+/* Process section floating 3D dots */
+.process-section { position: relative; overflow: hidden; }
+.process-3d-accent {
+  position: absolute;
+  width: 300px; height: 300px;
+  right: -80px; bottom: -80px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+.process-3d-accent .orb-ring:nth-child(1) {
+  width: 200px; height: 200px;
+  border-color: var(--gold);
+  top: 50px; left: 50px;
+  animation-duration: 12s;
+}
+.process-3d-accent .orb-ring:nth-child(2) {
+  width: 280px; height: 280px;
+  border-color: rgba(168,85,247,0.8);
+  top: 10px; left: 10px;
+  animation-name: orbit3d-rev;
+  animation-duration: 8s;
+}
+
+/* Announcement section floating accent */
+.announcements-section { position: relative; overflow: hidden; }
+.ann-3d-accent {
+  position: absolute;
+  width: 280px; height: 280px;
+  left: -60px; top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+.ann-3d-accent .orb-ring {
+  width: 200px; height: 200px;
+  border-color: var(--gold);
+  top: 40px; left: 40px;
+  animation-duration: 10s;
+}
+
+/* ===== END 3D DECORATIVE ===== */
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px) {
+  .hero-inner { grid-template-columns:1fr; gap:48px; }
+  .hero-card-stack { height:auto; }
+  .platform-card.c1,.platform-card.c2,.platform-card.c3,.platform-card.c4 { display:none; }
+  .platform-card.main { position:relative; top:auto; left:auto; transform:none; margin:0 auto; width:100%; max-width:400px; }
+  .services-grid { grid-template-columns:repeat(2,1fr); }
+  .why-inner { grid-template-columns:1fr; gap:48px; }
+  .why-big-num { font-size:8rem; }
+  .process-steps { grid-template-columns:repeat(2,1fr); gap:40px; }
+  .process-steps::before { display:none; }
+  .ann-grid { grid-template-columns:1fr; }
+  .contact-grid { grid-template-columns:1fr; max-width:400px; }
+  .proof-grid { grid-template-columns:repeat(2,1fr); }
+  .nav-wrap { padding:0 24px; }
+  .container { padding:0 24px; }
+  .section { padding:80px 0; }
+}
+
+@media(max-width:768px) {
+  /* Base */
+  body { cursor:auto; }
+  .cursor,.cursor-ring { display:none; }
+  .container { padding:0 20px; }
+  .section { padding:64px 0; }
+
+  /* Header */
+  .nav-links, .nav-cta { display:none; }
+  .nav-wrap { padding:0 20px; }
+
+  /* Hero */
+  .hero { padding:100px 0 60px; }
+  .hero-inner { gap:40px; }
+  .hero h1 { font-size:2.4rem; }
+  .hero-desc { font-size:.95rem; }
+  .hero-tag { font-size:11px; }
+  .btn-primary { padding:15px 28px; font-size:13px; width:100%; justify-content:center; }
+  .btn-ghost { font-size:13px; }
+  .hero-actions { flex-direction:column; align-items:flex-start; gap:16px; }
+  .hero-stats { grid-template-columns:1fr 1fr 1fr; }
+  .hero-stat { padding:18px 12px; }
+  .hero-stat-num { font-size:1.6rem; }
+  .hero-stat-label { font-size:9px; }
+
+  /* Platform card on mobile */
+  .platform-card.main { max-width:100%; padding:20px; }
+  .main-title { font-size:1.1rem; }
+  .growth-indicator { font-size:12px; }
+
+  /* Services */
+  .services-grid { grid-template-columns:1fr; gap:1px; }
+  .service-tile { padding:36px 24px; }
+  .service-tile h3 { font-size:1.3rem; }
+
+  /* Section labels & titles */
+  .section-title { font-size:2rem; }
+  .section-label { font-size:10px; }
+
+  /* Why us */
+  .why-big-num { font-size:6rem; }
+  .why-badge { position:relative; right:auto; bottom:auto; margin-top:20px; display:inline-block; }
+  .why-visual { display:flex; flex-direction:column; align-items:flex-start; }
+  .why-point { gap:14px; padding:20px 0; }
+  .why-point-icon { width:38px; height:38px; font-size:14px; flex-shrink:0; }
+
+  /* Process */
+  .process-steps { grid-template-columns:1fr 1fr; gap:28px; }
+  .step-num { width:56px; height:56px; font-size:1.3rem; }
+  .process-step h4 { font-size:1rem; }
+  .process-step p { font-size:.82rem; }
+
+  /* Proof */
+  .proof-grid { grid-template-columns:1fr; gap:16px; }
+  .proof-card { padding:24px 20px; }
+
+  /* FAQ */
+  .faq-q h4 { font-size:.95rem; padding-right:20px; }
+
+  /* Announcements */
+  .ann-grid { grid-template-columns:1fr; gap:16px; }
+  .ann-card { padding:28px 22px; }
+  .ann-card .discount { font-size:3rem; }
+  .ann-small { padding:22px 18px; gap:14px; }
+  .ann-small-icon { font-size:20px; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns:1fr; max-width:100%; gap:14px; }
+  .contact-card { padding:28px 20px; }
+  .contact-desc { font-size:.95rem; margin-bottom:40px; }
+
+  /* Footer */
+  .footer-inner { flex-direction:column; gap:28px; text-align:center; padding-bottom:28px; }
+  .footer-links { flex-wrap:wrap; justify-content:center; gap:16px 24px; }
+  .footer-socials { justify-content:center; }
+  .footer-bottom { flex-direction:column; gap:10px; text-align:center; }
+
+  /* Marquee */
+  .marquee-item { font-size:11px; gap:10px; }
+}
+
+@media(max-width:400px) {
+  .hero h1 { font-size:2rem; }
+  .hero-stat-num { font-size:1.4rem; }
+  .hero-stat-label { font-size:8px; letter-spacing:0; }
+  .process-steps { grid-template-columns:1fr; }
+  .section-title { font-size:1.8rem; }
+  .hero-actions { width:100%; }
+  .btn-primary { width:100%; }
+}
+
+/* ===== HAMBURGER & MOBILE MENU ===== */
+.hamburger {
+  display:none;
+  flex-direction:column; justify-content:center; align-items:center;
+  gap:5px; width:40px; height:40px;
+  background:none; border:1px solid rgba(255,255,255,0.12);
+  border-radius:10px; cursor:pointer; padding:8px;
+  transition:border-color .3s;
+}
+.hamburger:hover { border-color:var(--gold); }
+.hamburger span {
+  display:block; width:18px; height:1.5px;
+  background:var(--white); border-radius:2px;
+  transition:all .35s cubic-bezier(.23,1,.32,1);
+  transform-origin:center;
+}
+.hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+
+.mobile-menu {
+  position:fixed; top:0; left:0; width:100%; height:100vh;
+  background:rgba(8,6,14,0.97);
+  backdrop-filter:blur(24px);
+  z-index:999;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; pointer-events:none;
+  transition:opacity .4s ease;
+}
+.mobile-menu.open { opacity:1; pointer-events:all; }
+.mobile-menu ul { list-style:none; text-align:center; }
+.mobile-menu li { margin:0; overflow:hidden; }
+.mobile-menu a {
+  display:block; padding:18px 40px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem; font-weight:300; color:var(--white);
+  text-decoration:none; letter-spacing:2px;
+  transition:color .3s;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.mobile-menu a:hover { color:var(--gold); }
+.mobile-menu .mobile-cta {
+  margin-top:20px; display:inline-block;
+  padding:16px 48px;
+  background:linear-gradient(135deg,var(--gold),#a8722a);
+  color:var(--ink) !important; font-weight:600;
+  font-size:1rem; letter-spacing:2px; text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;
+  border:none; border-radius:0;
+}
+
+@media(max-width:768px) {
+  .hamburger { display:flex; }
+  .nav-cta { display:none; }
+}
+
+
+/* FORM */
+.contact-form-wrap{max-width:700px;margin:56px auto 0;background:rgba(29,23,48,0.75);border:1px solid rgba(201,168,76,0.18);border-radius:24px;padding:48px 44px;backdrop-filter:blur(20px);position:relative;overflow:hidden;}
+.contact-form-wrap::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.form-heading{font-family:"Cormorant Garamond",serif;font-size:1.9rem;font-weight:600;color:var(--white);text-align:center;margin-bottom:8px;}
+.form-sub{text-align:center;color:var(--text-dim);font-size:.9rem;margin-bottom:36px;line-height:1.7;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.form-group label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:14px 18px;color:var(--white);font-family:"DM Sans",sans-serif;font-size:.95rem;outline:none;transition:border-color .3s,background .3s;width:100%;-webkit-appearance:none;appearance:none;}
+.form-group select option{background:#1d1730;color:var(--white);}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.18);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(201,168,76,0.45);background:rgba(201,168,76,0.04);box-shadow:0 0 0 3px rgba(201,168,76,0.07);}
+.form-group textarea{resize:none;height:115px;}
+.form-submit{width:100%;padding:18px;background:linear-gradient(135deg,var(--gold),#a8722a);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:10px;cursor:pointer;margin-top:6px;transition:transform .3s,box-shadow .3s;}
+.form-submit:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(201,168,76,0.35);}
+.form-success{display:none;text-align:center;padding:48px 20px;}
+.form-success-icon{width:72px;height:72px;border-radius:50%;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;color:#4ade80;}
+.form-success h4{font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--white);margin-bottom:10px;}
+.form-success p{color:var(--text-dim);font-size:.95rem;}
+@media(max-width:768px){.contact-form-wrap{padding:32px 20px;margin-top:40px;}.form-row{grid-template-columns:1fr;}}
+
+/* ===== PRICING SECTION ===== */
+.pricing-section { background: var(--ink2); }
+body.light .pricing-section { background: #ede9e2; }
+
+.pricing-tabs {
+  display: flex; gap: 8px; justify-content: center;
+  margin: 48px 0 56px;
+  flex-wrap: wrap;
+}
+.ptab {
+  padding: 10px 22px;
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-dim);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: all .3s;
+}
+.ptab:hover { border-color: var(--gold); color: var(--gold); }
+.ptab.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+}
+body.light .ptab { color: var(--text-dim); }
+body.light .ptab.active { color: var(--ink); }
+
+.pricing-panel { display: none; }
+.pricing-panel.active { display: block; }
+
+.pricing-panel-title {
+  text-align: center;
+  font-size: .85rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 36px;
+}
+.pricing-panel-title span { color: var(--gold); }
+
+.pricing-cards {
+  display: grid;
+  gap: 20px;
+}
+.pricing-cards.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.pricing-cards.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.pricing-cards.cols-5 { grid-template-columns: repeat(5, 1fr); }
+
+.price-card {
+  background: var(--mist);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 32px 24px;
+  position: relative; overflow: hidden;
+  transition: transform .4s, border-color .4s, box-shadow .4s;
+}
+body.light .price-card { background: #ffffff; border-color: rgba(0,0,0,0.07); }
+.price-card:hover { transform: translateY(-8px); border-color: rgba(201,168,76,0.3); box-shadow: 0 24px 60px rgba(0,0,0,0.2); }
+.price-card.featured {
+  border-color: rgba(201,168,76,0.35);
+  background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(124,58,237,0.06) 100%);
+}
+body.light .price-card.featured { background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(124,58,237,0.06) 100%); border-color: rgba(201,168,76,0.4); }
+.price-card.featured::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.price-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+  padding: 4px 12px; border-radius: 100px;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+}
+.price-badge.popular { background: rgba(201,168,76,0.18); }
+.price-badge.deal { background: rgba(168,85,247,0.12); border-color: rgba(168,85,247,0.3); color: #c084fc; }
+.price-badge.try { background: rgba(74,222,128,0.08); border-color: rgba(74,222,128,0.25); color: #4ade80; }
+
+.price-tier {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 8px;
+}
+.price-qty {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 700; color: var(--white); line-height: 1;
+  margin-bottom: 4px;
+}
+body.light .price-qty { color: #1a1625; }
+.price-qty sub { font-size: 1.2rem; font-weight: 400; }
+.price-type { font-size: .8rem; color: var(--text-dim); margin-bottom: 20px; }
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 700;
+  color: var(--gold); line-height: 1;
+}
+.price-desc { font-size: .8rem; color: var(--text-dim); margin-top: 6px; font-style: italic; }
+.price-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+body.light .price-divider { background: rgba(0,0,0,0.07); }
+.price-features { display: flex; flex-direction: column; gap: 8px; }
+.pf-item { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--text-dim); }
+.pf-item i { color: var(--gold); font-size: 10px; flex-shrink: 0; }
+.price-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; margin-top: 24px; padding: 13px 20px;
+  border: 1px solid rgba(201,168,76,0.3); border-radius: 10px;
+  color: var(--gold); font-size: 12px; letter-spacing: 1.5px;
+  text-transform: uppercase; text-decoration: none;
+  transition: all .3s; font-weight: 500;
+}
+.price-cta:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.price-card.featured .price-cta {
+  background: linear-gradient(135deg, var(--gold), #a8722a);
+  border-color: transparent; color: var(--ink); font-weight: 700;
+}
+.price-card.featured .price-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,168,76,0.35); }
+
+.pricing-note {
+  text-align: center; margin-top: 48px;
+  color: var(--text-dim); font-size: .875rem; line-height: 1.8;
+}
+.pricing-note a { color: var(--gold); text-decoration: none; }
+.pricing-note a:hover { text-decoration: underline; }
+
+/* Demo badge */
+.demo-strip {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 28px; padding: 14px 24px;
+  border: 1px dashed rgba(74,222,128,0.3);
+  border-radius: 12px; background: rgba(74,222,128,0.04);
+  color: var(--text-dim); font-size: .875rem;
+}
+.demo-strip strong { color: #4ade80; }
+
+@media(max-width:900px) {
+  .pricing-cards.cols-4,
+  .pricing-cards.cols-5 { grid-template-columns: repeat(2,1fr); }
+  .pricing-cards.cols-3 { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:560px) {
+  .pricing-cards.cols-3,
+  .pricing-cards.cols-4,
+  .pricing-cards.cols-5 { grid-template-columns: 1fr; }
+  .pricing-tabs { gap: 6px; }
+  .ptab { font-size: 11px; padding: 9px 16px; }
+  .price-qty { font-size: 2.2rem; }
+}
+
+/* ===== PROOFS OVERLAY ===== */
+#po, #po *, #po-land, #po-land * { cursor: default !important; }
+#po .po-startbtn, #po .po-backbtn, #po #po-close, #po #po-mute { cursor: pointer !important; }
+
+#po{display:none;position:fixed;inset:0;z-index:99999;background:#08060e;flex-direction:column;cursor:default;}
+#po.open{display:flex;}
+#po-land{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#08060e;z-index:100;transition:opacity .6s,transform .6s;cursor:default;}
+#po-land.hidden{opacity:0;transform:scale(1.04);pointer-events:none;}
+.po-logo{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,8vw,4.5rem);font-weight:700;color:#c9a84c;letter-spacing:.04em;line-height:1;margin-bottom:8px;}
+.po-sub{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#8a8098;margin-bottom:56px;}
+.po-count{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#8a8098;margin-bottom:32px;}
+.po-count span{color:#c9a84c;font-weight:600;}
+.po-startbtn{padding:16px 44px;background:transparent;border:1px solid #c9a84c;color:#c9a84c;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer!important;border-radius:2px;transition:background .25s,color .25s;}
+.po-startbtn:hover{background:#c9a84c;color:#08060e;}
+.po-backbtn{position:absolute;top:24px;left:24px;color:#8a8098;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:8px;cursor:pointer;background:none;border:none;transition:color .2s;}
+.po-backbtn:hover{color:#c9a84c;}
+#po-view{position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;overflow:hidden;}
+#po-view.active{display:flex;}
+#po-bars{position:absolute;top:0;left:0;right:0;padding:12px 12px 0;display:flex;gap:4px;z-index:50;}
+.po-seg{flex:1;height:2px;background:rgba(255,255,255,.25);border-radius:2px;overflow:hidden;}
+.po-segf{height:100%;background:#fff;width:0%;}
+.po-seg.done .po-segf{width:100%;}
+.po-seg.active .po-segf{animation:poFill var(--dur,4s) linear forwards;}
+@keyframes poFill{from{width:0%}to{width:100%}}
+#po-hdr{position:absolute;top:0;left:0;right:0;padding:28px 16px 16px;display:flex;align-items:center;gap:10px;z-index:40;background:linear-gradient(to bottom,rgba(0,0,0,.6),transparent);}
+.po-av{width:34px;height:34px;border-radius:50%;border:1.5px solid #c9a84c;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:#c9a84c;background:rgba(201,168,76,.1);flex-shrink:0;}
+.po-meta{display:flex;flex-direction:column;gap:1px;}
+.po-hname{font-size:.82rem;font-weight:500;color:#fff;}
+.po-badge{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;}
+#po-ctr{margin-left:auto;font-size:.72rem;color:rgba(255,255,255,.55);}
+#po-close{width:32px;height:32px;border:none;background:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin-left:8px;border-radius:50%;transition:color .2s,background .2s;}
+#po-close:hover{color:#fff;background:rgba(255,255,255,.12);}
+#po-wrap{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;}
+#po-img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;display:block;}
+#po-vid{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;display:none;}
+#po-prev,#po-next{position:absolute;top:0;bottom:0;width:35%;cursor:pointer;z-index:30;-webkit-tap-highlight-color:transparent;}
+#po-prev{left:0;}#po-next{right:0;}
+.po-flash{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.15);pointer-events:none;opacity:0;transition:opacity .1s;}
+.po-flash.show{opacity:1;}
+#po-prev .po-flash{left:20px;}#po-next .po-flash{right:20px;}
+#po-pause{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;pointer-events:none;z-index:35;}
+#po-pause.show{opacity:1;}
+#po-pause svg{width:22px;height:22px;fill:#fff;}
+#po-cap{position:absolute;bottom:0;left:0;right:0;padding:48px 20px 28px;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);z-index:40;display:flex;align-items:flex-end;justify-content:space-between;}
+.po-captxt{font-size:.78rem;color:rgba(255,255,255,.65);}
+.po-caplbl{font-family:'Cormorant Garamond',serif;font-size:.85rem;color:#c9a84c;letter-spacing:.1em;text-transform:uppercase;}
+#po-mute{position:absolute;bottom:72px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:.9rem;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;}
+#po-mute.visible{display:flex;}
+#po-spin{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border:2px solid rgba(201,168,76,.2);border-top-color:#c9a84c;border-radius:50%;animation:poSpin .7s linear infinite;z-index:45;display:none;}
+#po-spin.visible{display:block;}
+@keyframes poSpin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+#po-end{position:absolute;inset:0;background:#08060e;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:60;gap:16px;}
+#po-end.active{display:flex;}
+.po-endicon{font-size:3rem;margin-bottom:8px;}
+.po-endtitle{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#c9a84c;font-weight:600;}
+.po-endsub{color:#8a8098;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;}
+.po-endbtns{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;justify-content:center;}
+.po-endbtn{padding:13px 32px;border:1px solid #c9a84c;background:transparent;color:#c9a84c;font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .2s,color .2s;text-decoration:none;}
+.po-endbtn:hover,.po-endbtn.primary{background:#c9a84c;color:#08060e;}
+.po-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);pointer-events:none;animation:poHint 3s ease 1.5s forwards;opacity:0;white-space:nowrap;z-index:40;}
+@keyframes poHint{0%{opacity:0}15%{opacity:1}70%{opacity:1}100%{opacity:0}}
+
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div id="slay-progress"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Header -->
+<header id="header">
+  <div class="nav-wrap">
+    <a href="#" class="logo"><em>Social</em> Media<span style="display:block;font-size:0.45em;letter-spacing:4px;color:var(--gold-light);font-weight:300;margin-top:-4px;">MANAGEMENT</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#announcements">Offers</a></li>
+      <li><a href="#" onclick="openProofs(event)" style="color:var(--gold)!important;">&#10022; Proofs</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Switch to light mode">
+        <div class="theme-toggle-knob" id="themeKnob">☀</div>
+      </button>
+      <a href="#contact" class="nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="#process" onclick="closeMobileMenu()">How It Works</a></li>
+    <li><a href="#pricing" onclick="closeMobileMenu()">Pricing</a></li>
+    <li><a href="#faq" onclick="closeMobileMenu()">FAQ</a></li>
+    <li><a href="#announcements" onclick="closeMobileMenu()">Offers</a></li>
+    <li><a href="#" onclick="closeMobileMenu();openProofs(event);" style="color:var(--gold)">&#10022; View Proofs</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()" class="mobile-cta">Get Started</a></li>
+  </ul>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <canvas id="hero3d"></canvas>
+  <!-- Extra floating 3D shapes container -->
+  <div class="hero-shape-canvas" style="position:absolute;right:6%;top:50%;transform:translateY(-50%);width:260px;height:260px;pointer-events:none;z-index:1;opacity:0.45;overflow:hidden;"></div>
+  <div class="hero-bg">
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag"><span></span> Premium Growth Services</div>
+      <h1>Grow Your Brand <strong>Across Every Platform</strong></h1>
+      <p class="hero-desc">Real results. Real engagement. We deliver premium social media growth for Instagram, TikTok, YouTube, Facebook, Telegram, and more — fast, safe, and guaranteed.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start Growing <i class="fas fa-arrow-right"></i></a>
+        <a href="#" onclick="openProofs(event)" class="btn-ghost" style="color:#c9a84c;border:1px solid rgba(201,168,76,0.35);padding:14px 28px;">&#10022; View Proofs</a>
+        <a href="#services" class="btn-ghost">View Services <i class="fas fa-chevron-right"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">50K+</div>
+          <div class="hero-stat-label">Satisfied Clients</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100M+</div>
+          <div class="hero-stat-label">Followers Delivered</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">24/7</div>
+          <div class="hero-stat-label">Support</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-orb-container">
+        <div class="orb-ring"></div>
+        <div class="orb-ring"></div>
+        <div class="orb-ring"></div>
+        <div class="hero-orb-core"></div>
+      </div>
+      <div class="hero-card-stack">
+        <div class="platform-card c1">
+          <div class="pc-icon ig-color"><i class="fab fa-instagram"></i></div>
+          <div class="pc-title">Instagram</div>
+          <div class="pc-sub">+12.4K Followers</div>
+          <div class="pc-bar"><div class="pc-bar-fill ig-bar" style="width:84%"></div></div>
+        </div>
+        <div class="platform-card c2">
+          <div class="pc-icon tt-color"><i class="fab fa-tiktok"></i></div>
+          <div class="pc-title">TikTok</div>
+          <div class="pc-sub">+850K Views</div>
+          <div class="pc-bar"><div class="pc-bar-fill tt-bar" style="width:92%"></div></div>
+        </div>
+        <div class="platform-card main">
+          <div class="main-platform-icons">
+            <div class="mpi ig-color"><i class="fab fa-instagram"></i></div>
+            <div class="mpi tt-color"><i class="fab fa-tiktok"></i></div>
+            <div class="mpi yt-color"><i class="fab fa-youtube"></i></div>
+            <div class="mpi fb-color"><i class="fab fa-facebook"></i></div>
+            <div class="mpi tg-color"><i class="fab fa-telegram"></i></div>
+          </div>
+          <div class="main-title">All-Platform Growth</div>
+          <div class="main-sub">Premium social media services</div>
+          <div class="growth-indicator">
+            <i class="fas fa-arrow-trend-up"></i>
+            <span>+240% avg. engagement boost</span>
+          </div>
+        </div>
+        <div class="platform-card c3">
+          <div class="pc-icon yt-color"><i class="fab fa-youtube"></i></div>
+          <div class="pc-title">YouTube</div>
+          <div class="pc-sub">+5.2K Subscribers</div>
+          <div class="pc-bar"><div class="pc-bar-fill yt-bar" style="width:75%"></div></div>
+        </div>
+        <div class="platform-card c4">
+          <div class="pc-icon fb-color"><i class="fab fa-facebook"></i></div>
+          <div class="pc-title">Facebook</div>
+          <div class="pc-sub">+9.8K Followers</div>
+          <div class="pc-bar"><div class="pc-bar-fill fb-bar" style="width:68%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee">
+    <div class="marquee-item"><i class="fab fa-instagram"></i> Instagram Growth</div>
+    <div class="marquee-item"><i class="fab fa-tiktok"></i> TikTok Growth</div>
+    <div class="marquee-item"><i class="fab fa-youtube"></i> YouTube Growth</div>
+    <div class="marquee-item"><i class="fab fa-facebook"></i> Facebook Growth</div>
+    <div class="marquee-item"><i class="fab fa-telegram"></i> Telegram Growth</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Real Engagement</div>
+    <div class="marquee-item"><i class="fas fa-shield-halved"></i> 100% Safe</div>
+    <div class="marquee-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+    <div class="marquee-item"><i class="fab fa-instagram"></i> Instagram Growth</div>
+    <div class="marquee-item"><i class="fab fa-tiktok"></i> TikTok Growth</div>
+    <div class="marquee-item"><i class="fab fa-youtube"></i> YouTube Growth</div>
+    <div class="marquee-item"><i class="fab fa-facebook"></i> Facebook Growth</div>
+    <div class="marquee-item"><i class="fab fa-telegram"></i> Telegram Growth</div>
+    <div class="marquee-item"><i class="fas fa-star"></i> Real Engagement</div>
+    <div class="marquee-item"><i class="fas fa-shield-halved"></i> 100% Safe</div>
+    <div class="marquee-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-label reveal">What We Offer</div>
+    <div class="section-title reveal reveal-d1">Premium Services <br>for <strong>Every Platform</strong></div>
+    <div class="services-grid">
+      <div class="service-tile reveal">
+        <div class="service-tile-num">01</div>
+        <div class="service-icon-wrap"><i class="fab fa-instagram ig-color"></i></div>
+        <h3>Instagram Growth</h3>
+        <p>Followers, likes, views, comments, story views, saves, shares — complete Instagram growth to dominate your niche.</p>
+        <div class="service-features">
+          <span class="feat-tag">Followers</span>
+          <span class="feat-tag">Likes</span>
+          <span class="feat-tag">Views</span>
+          <span class="feat-tag">Comments</span>
+        </div>
+      </div>
+      <div class="service-tile reveal reveal-d1">
+        <div class="service-tile-num">02</div>
+        <div class="service-icon-wrap"><i class="fab fa-tiktok tt-color"></i></div>
+        <h3>TikTok Growth</h3>
+        <p>Explode your TikTok presence with massive views, followers, likes, and shares on the fastest-growing platform.</p>
+        <div class="service-features">
+          <span class="feat-tag">Views</span>
+          <span class="feat-tag">Followers</span>
+          <span class="feat-tag">Likes</span>
+          <span class="feat-tag">Shares</span>
+        </div>
+      </div>
+      <div class="service-tile reveal reveal-d2">
+        <div class="service-tile-num">03</div>
+        <div class="service-icon-wrap"><i class="fab fa-youtube yt-color"></i></div>
+        <h3>YouTube Growth</h3>
+        <p>Subscribers, views, watch hours, likes, and comments — everything you need to grow your channel and monetize faster.</p>
+        <div class="service-features">
+          <span class="feat-tag">Subscribers</span>
+          <span class="feat-tag">Views</span>
+          <span class="feat-tag">Watch Hours</span>
+        </div>
+      </div>
+      <div class="service-tile reveal reveal-d3">
+        <div class="service-tile-num">04</div>
+        <div class="service-icon-wrap"><i class="fab fa-facebook fb-color"></i></div>
+        <h3>Facebook Growth</h3>
+        <p>Page likes, followers, post engagement, video views — boost your Facebook presence and reach more customers.</p>
+        <div class="service-features">
+          <span class="feat-tag">Page Likes</span>
+          <span class="feat-tag">Followers</span>
+          <span class="feat-tag">Engagement</span>
+        </div>
+      </div>
+      <div class="service-tile reveal reveal-d4">
+        <div class="service-tile-num">05</div>
+        <div class="service-icon-wrap"><i class="fab fa-telegram tg-color"></i></div>
+        <h3>Telegram Growth</h3>
+        <p>Channel members, post views, reactions — grow your Telegram community and increase your message reach.</p>
+        <div class="service-features">
+          <span class="feat-tag">Members</span>
+          <span class="feat-tag">Views</span>
+          <span class="feat-tag">Reactions</span>
+        </div>
+      </div>
+      <div class="service-tile reveal reveal-d5">
+        <div class="service-tile-num">06</div>
+        <div class="service-icon-wrap"><i class="fas fa-globe" style="color:var(--gold)"></i></div>
+        <h3>All Platforms</h3>
+        <p>Twitter/X, Spotify, LinkedIn, Pinterest, Snapchat & more. If you need growth on any platform, we deliver.</p>
+        <div class="service-features">
+          <span class="feat-tag">Twitter/X</span>
+          <span class="feat-tag">Spotify</span>
+          <span class="feat-tag">LinkedIn</span>
+          <span class="feat-tag">+More</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="section why-section">
+  <div class="why-3d-accent">
+    <div class="orb-ring"></div>
+    <div class="orb-ring"></div>
+    <div class="orb-ring"></div>
+  </div>
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-visual reveal">
+        <div class="why-big-num">50K</div>
+        <div class="why-badge">
+          <div class="why-badge-num">100M+</div>
+          <div class="why-badge-text">Followers & Views Delivered</div>
+        </div>
+      </div>
+      <div class="why-right">
+        <div class="section-label reveal">Why Choose Us</div>
+        <div class="section-title reveal reveal-d1">The Trusted Choice <br>for <strong>Real Growth</strong></div>
+        <div class="why-points">
+          <div class="why-point reveal reveal-d1">
+            <div class="why-point-icon"><i class="fas fa-shield-halved"></i></div>
+            <div>
+              <div class="why-point-title">100% Safe & Secure</div>
+              <div class="why-point-desc">We never ask for your password. Our methods work within platform guidelines to keep your account safe at all times.</div>
+            </div>
+          </div>
+          <div class="why-point reveal reveal-d2">
+            <div class="why-point-icon"><i class="fas fa-bolt"></i></div>
+            <div>
+              <div class="why-point-title">Lightning Fast Delivery</div>
+              <div class="why-point-desc">Orders start processing within minutes. Most services are delivered within hours of placing your order.</div>
+            </div>
+          </div>
+          <div class="why-point reveal reveal-d3">
+            <div class="why-point-icon"><i class="fas fa-headset"></i></div>
+            <div>
+              <div class="why-point-title">24/7 Dedicated Support</div>
+              <div class="why-point-desc">Our team is always available via WhatsApp, Instagram, or Telegram to help you with any questions or issues.</div>
+            </div>
+          </div>
+          <div class="why-point reveal reveal-d4">
+            <div class="why-point-icon"><i class="fas fa-rotate"></i></div>
+            <div>
+              <div class="why-point-title">Refill Guarantee</div>
+              <div class="why-point-desc">We offer refills on drops for eligible packages. Your investment is protected with our quality guarantee.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section process-section" id="process">
+  <div class="process-3d-accent">
+    <div class="orb-ring"></div>
+    <div class="orb-ring"></div>
+  </div>
+  <div class="container">
+    <div class="section-label reveal">Simple Process</div>
+    <div class="section-title reveal reveal-d1">How It <strong>Works</strong></div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <h4>Choose Your Service</h4>
+        <p>Browse our full range of social media growth services and select what fits your goals and budget.</p>
+      </div>
+      <div class="process-step reveal reveal-d1">
+        <div class="step-num">02</div>
+        <h4>Contact Us</h4>
+        <p>Reach out via WhatsApp, Instagram, or Telegram. Tell us your target platform, URL, and desired quantity.</p>
+      </div>
+      <div class="process-step reveal reveal-d2">
+        <div class="step-num">03</div>
+        <h4>Confirm & Pay</h4>
+        <p>We'll send you a custom quote. Once confirmed, we process payment and your order begins immediately.</p>
+      </div>
+      <div class="process-step reveal reveal-d3">
+        <div class="step-num">04</div>
+        <h4>Watch You Grow</h4>
+        <p>Sit back and watch your numbers climb. We deliver results fast and keep you updated throughout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="section proof-section">
+  <div class="proof-3d-accent">
+    <div class="orb-ring"></div>
+    <div class="orb-ring"></div>
+  </div>
+  <div class="container">
+    <div class="section-label reveal">Client Reviews</div>
+    <div class="section-title reveal reveal-d1">What Our <strong>Clients Say</strong></div>
+    <div class="proof-grid">
+      <div class="proof-card reveal">
+        <div class="proof-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="proof-text">"Ordered 10K Instagram followers and they arrived within 2 hours. High quality accounts, my engagement actually went up too. Will definitely order again!"</p>
+        <div class="proof-author">
+          <div class="proof-avatar" style="background:linear-gradient(135deg,#E1306C,#f09433)">A</div>
+          <div>
+            <div class="proof-name">Aisha K.</div>
+            <div class="proof-platform">Instagram Creator</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card reveal reveal-d1">
+        <div class="proof-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="proof-text">"Got TikTok views for my business videos. The package was incredibly affordable and the delivery was super fast. My organic reach improved too!"</p>
+        <div class="proof-author">
+          <div class="proof-avatar" style="background:linear-gradient(135deg,#69C9D0,#EE1D52)">R</div>
+          <div>
+            <div class="proof-name">Rahul S.</div>
+            <div class="proof-platform">TikTok Business</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card reveal reveal-d2">
+        <div class="proof-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="proof-text">"Bilal is very professional. Got YouTube subscribers to reach monetization faster. Support was responsive on WhatsApp throughout. Highly recommend!"</p>
+        <div class="proof-author">
+          <div class="proof-avatar" style="background:linear-gradient(135deg,#FF0000,#ff6b6b)">M</div>
+          <div>
+            <div class="proof-name">Mohamed T.</div>
+            <div class="proof-platform">YouTube Creator</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="container" style="max-width:800px">
+    <div class="section-label reveal">FAQs</div>
+    <div class="section-title reveal reveal-d1">Common <strong>Questions</strong></div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          <h4>Is it safe to use your services?</h4>
+          <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <p>Yes, completely safe. We never ask for your password and our methods are designed to work within platform guidelines. Your account security is always our top priority.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d1">
+        <div class="faq-q">
+          <h4>How fast will I see results?</h4>
+          <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <p>Most orders begin processing within minutes of confirmation. Depending on the size and package, delivery completes within a few hours to 24 hours. We always keep you updated.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d2">
+        <div class="faq-q">
+          <h4>Are the followers and views real?</h4>
+          <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <p>We offer multiple tiers — from standard to premium high-quality packages. Our premium packages deliver the highest quality engagement available in the market. We'll help you choose the right tier for your goals.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d3">
+        <div class="faq-q">
+          <h4>How do I place an order?</h4>
+          <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <p>Simply contact us on WhatsApp, Instagram DM, or Telegram. Share your profile/post link, the service you want, and the quantity. We'll send you a quote and process your order once confirmed.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d4">
+        <div class="faq-q">
+          <h4>What if I lose followers after delivery?</h4>
+          <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <p>We offer refill guarantees on eligible packages. If you experience a drop within the guarantee period, simply contact us and we'll top it up at no extra cost.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d5">
+        <div class="faq-q">
+          <h4>Do you offer bulk discounts?</h4>
+          <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a">
+          <p>Yes! We offer custom discounts for large orders and bulk purchases. Contact us directly for a personalized quote tailored to your needs and budget.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Announcements -->
+<section class="section announcements-section" id="announcements">
+  <div class="ann-3d-accent">
+    <div class="orb-ring"></div>
+  </div>
+  <div class="container">
+    <div class="section-label reveal">Latest Offers</div>
+    <div class="section-title reveal reveal-d1">Special <strong>Announcements</strong></div>
+    <div class="ann-grid">
+      <div class="ann-card featured reveal">
+        <div class="ann-badge"><i class="fas fa-fire"></i> Limited Time</div>
+        <h3>Weekly Flash Sale</h3>
+        <div class="discount">20% OFF</div>
+        <p>Get 20% off on all 10K+ follower packages. Custom discounts available for bulk views orders. Contact us to claim.</p>
+        <br>
+        <a href="#contact" class="btn-primary" style="display:inline-flex; font-size:12px; padding:14px 28px;">Claim Offer <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="ann-right">
+        <div class="ann-small reveal reveal-d1">
+          <div class="ann-small-icon"><i class="fab fa-tiktok tt-color"></i></div>
+          <div>
+            <div class="ann-badge" style="font-size:10px; padding:3px 10px;"><i class="fas fa-sparkles"></i> New</div>
+            <h4>TikTok Unlimited Posts Package</h4>
+            <p>Our new TikTok growth package now covers unlimited posts — boost all your videos with one order. Fastest growing platform, best prices.</p>
+          </div>
+        </div>
+        <div class="ann-small reveal reveal-d2">
+          <div class="ann-small-icon" style="color:var(--gold)"><i class="fas fa-crown"></i></div>
+          <div>
+            <div class="ann-badge" style="font-size:10px; padding:3px 10px;"><i class="fas fa-star"></i> Premium</div>
+            <h4>Premium Tier Now Available</h4>
+            <p>Introducing our new premium packages — highest quality followers, faster delivery, and priority support across all major platforms.</p>
+          </div>
+        </div>
+        <div class="ann-small reveal reveal-d3">
+          <div class="ann-small-icon" style="color:#4ade80"><i class="fas fa-handshake"></i></div>
+          <div>
+            <div class="ann-badge" style="font-size:10px; padding:3px 10px; border-color:rgba(74,222,128,0.3); color:#4ade80; background:rgba(74,222,128,0.05)"><i class="fas fa-check"></i> Ongoing</div>
+            <h4>Referral Bonus Program</h4>
+            <p>Refer a friend and earn free credits. For every client you refer, you get bonus services added to your account — ask us for details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section pricing-section" id="pricing">
+  <div class="pricing-3d-accent">
+    <div class="orb-ring"></div>
+    <div class="orb-ring"></div>
+  </div>
+  <div class="container">
+    <div class="section-label reveal">Transparent Pricing</div>
+    <div class="section-title reveal reveal-d1">Instagram <strong>Price List</strong></div>
+
+    <div class="pricing-tabs">
+      <button class="ptab active" onclick="showPricing('ig-followers-worldwide')">🌍 Followers (Worldwide)</button>
+      <button class="ptab" onclick="showPricing('ig-followers-indian')">🇮🇳 Followers (Indian)</button>
+      <button class="ptab" onclick="showPricing('ig-followers-intl')">🎯 Followers (Premium Intl)</button>
+      <button class="ptab" onclick="showPricing('ig-reels')">▶ Reel Views</button>
+      <button class="ptab" onclick="showPricing('ig-likes-worldwide')">🌍 Likes (Worldwide)</button>
+      <button class="ptab" onclick="showPricing('ig-likes-indian')">🇮🇳 Likes (Indian)</button>
+    </div>
+
+    <!-- PANEL 1: IG Followers Indian -->
+    <div class="pricing-panel" id="panel-ig-followers-indian">
+      <p class="pricing-panel-title"><span>Instagram Followers</span> · Mostly Indian 🇮🇳 Mix · 300+ Days Free Refill</p>
+      <div class="pricing-cards cols-3">
+        <div class="price-card reveal">
+          <div class="price-tier">Starter</div>
+          <div class="price-qty">1K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">₹399</div>
+          <div class="price-desc">Perfect to get started</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Mostly Indian Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 300+ Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> 100% Safe & Secure</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%201K%20Indian%20Followers%20for%20₹399" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card featured reveal reveal-d1">
+          <div class="price-badge popular"><i class="fas fa-fire"></i> Most Popular</div>
+          <div class="price-tier">Growth</div>
+          <div class="price-qty">5K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">₹1,550</div>
+          <div class="price-desc">Best value for growth</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Mostly Indian Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 300+ Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> 100% Safe & Secure</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%205K%20Indian%20Followers%20for%20₹1550" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d2">
+          <div class="price-badge deal"><i class="fas fa-star"></i> Best Deal</div>
+          <div class="price-tier">Pro</div>
+          <div class="price-qty">10K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">₹2,999</div>
+          <div class="price-desc">Stand out plan</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Mostly Indian Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 300+ Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> 100% Safe & Secure</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%2010K%20Indian%20Followers%20for%20₹2999" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 2: IG Followers Worldwide -->
+    <div class="pricing-panel active" id="panel-ig-followers-worldwide">
+      <p class="pricing-panel-title"><span>Instagram Followers</span> · Worldwide 🌍 Mix · 150 Days Free Refill</p>
+      <div class="pricing-cards cols-3">
+        <div class="price-card reveal">
+          <div class="price-tier">Starter</div>
+          <div class="price-qty">1K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">₹299</div>
+          <div class="price-desc">Perfect to get started</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Worldwide Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 150 Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> 100% Safe & Secure</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%201K%20Worldwide%20Followers%20for%20₹299" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card featured reveal reveal-d1">
+          <div class="price-badge popular"><i class="fas fa-fire"></i> Most Popular</div>
+          <div class="price-tier">Growth</div>
+          <div class="price-qty">5K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">₹1,299</div>
+          <div class="price-desc">Best value for growth</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Worldwide Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 150 Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> 100% Safe & Secure</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%205K%20Worldwide%20Followers%20for%20₹1299" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d2">
+          <div class="price-badge deal"><i class="fas fa-star"></i> Best Deal</div>
+          <div class="price-tier">Pro</div>
+          <div class="price-qty">10K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">₹2,499</div>
+          <div class="price-desc">Maximum impact</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Worldwide Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 150 Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> 100% Safe & Secure</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%2010K%20Worldwide%20Followers%20for%20₹2499" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 3: IG Followers International (USD) -->
+    <div class="pricing-panel" id="panel-ig-followers-intl">
+      <p class="pricing-panel-title"><span>Instagram Followers</span> · WorldWide Premium 🎯 · USA · Europe · Germany · Spain · France · Arab · 350+ Days Refill</p>
+      <div class="pricing-cards cols-3">
+        <div class="price-card reveal">
+          <div class="price-tier">Starter</div>
+          <div class="price-qty">1K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">$15</div>
+          <div class="price-desc">Perfect to get started</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> International Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 350+ Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> Best Refill Support</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%201K%20International%20Followers%20for%20$15" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card featured reveal reveal-d1">
+          <div class="price-badge popular"><i class="fas fa-fire"></i> Most Popular</div>
+          <div class="price-tier">Growth</div>
+          <div class="price-qty">5K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">$74</div>
+          <div class="price-desc">Best value for growth</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> International Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 350+ Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> Best Refill Support</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%205K%20International%20Followers%20for%20$74" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d2">
+          <div class="price-badge deal"><i class="fas fa-star"></i> Best Deal</div>
+          <div class="price-tier">Pro</div>
+          <div class="price-qty">10K</div>
+          <div class="price-type">Followers</div>
+          <div class="price-amount">$130</div>
+          <div class="price-desc">Maximum impact</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> International Mix</div>
+            <div class="pf-item"><i class="fas fa-check"></i> 350+ Days Free Refill</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+            <div class="pf-item"><i class="fas fa-shield-halved"></i> Best Refill Support</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%2010K%20International%20Followers%20for%20$130" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="demo-strip reveal">
+        <i class="fas fa-circle-play" style="color:#4ade80"></i>
+        Demo Available — just <strong>$2.99</strong> for 100 Followers &nbsp;·&nbsp;
+        <a href="https://wa.me/917017727563?text=Hi,%20I%20want%20the%20demo%20100%20followers%20for%20$2.99" style="color:#4ade80;text-decoration:none;" target="_blank">Try it →</a>
+      </div>
+    </div>
+
+    <!-- PANEL 4: IG Likes Indian -->
+    <div class="pricing-panel" id="panel-ig-likes-indian">
+      <p class="pricing-panel-title"><span>Instagram Likes</span> · Mostly Indian 🇮🇳 Exclusive · Real Profiles · Fast Speed · Lifetime Guaranteed</p>
+      <div class="pricing-cards cols-4">
+        <div class="price-card reveal">
+          <div class="price-tier">Starter</div>
+          <div class="price-qty">100</div>
+          <div class="price-type">Likes</div>
+          <div class="price-amount">₹25</div>
+          <div class="price-desc">Perfect to get started</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Real Indian Profiles</div>
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Results in minutes</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%20100%20Indian%20Likes%20for%20₹25" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card featured reveal reveal-d1">
+          <div class="price-badge popular"><i class="fas fa-fire"></i> Most Popular</div>
+          <div class="price-tier">Growth</div>
+          <div class="price-qty">500</div>
+          <div class="price-type">Likes</div>
+          <div class="price-amount">₹120</div>
+          <div class="price-desc">Best value</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Real Indian Profiles</div>
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Results in minutes</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%20500%20Indian%20Likes%20for%20₹120" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d2">
+          <div class="price-tier">Popular</div>
+          <div class="price-qty">1000</div>
+          <div class="price-type">Likes</div>
+          <div class="price-amount">₹200</div>
+          <div class="price-desc">High impact</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Real Indian Profiles</div>
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Results in minutes</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%201000%20Indian%20Likes%20for%20₹200" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d3">
+          <div class="price-badge deal"><i class="fas fa-star"></i> Best Value</div>
+          <div class="price-tier">Mega</div>
+          <div class="price-qty">10K</div>
+          <div class="price-type">Likes</div>
+          <div class="price-amount">₹1,350</div>
+          <div class="price-desc">Maximum engagement</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Real Indian Profiles</div>
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Results in minutes</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%2010K%20Indian%20Likes%20for%20₹1350" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 5: IG Likes Worldwide -->
+    <div class="pricing-panel" id="panel-ig-likes-worldwide">
+      <p class="pricing-panel-title"><span>Instagram Likes</span> · Worldwide 🌍 Mix · NON DROP · 100K/day Speed · Lifetime Guaranteed</p>
+      <div class="pricing-cards cols-4">
+        <div class="price-card reveal">
+          <div class="price-tier">Starter</div>
+          <div class="price-qty">100</div>
+          <div class="price-type">Likes</div>
+          <div class="price-amount">₹20</div>
+          <div class="price-desc">Perfect to get started</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Worldwide Profiles</div>
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Results in minutes</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%20100%20Worldwide%20Likes%20for%20₹20" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card featured reveal reveal-d1">
+          <div class="price-badge popular"><i class="fas fa-fire"></i> Most Popular</div>
+          <div class="price-tier">Growth</div>
+          <div class="price-qty">500</div>
+          <div class="price-type">Likes</div>
+          <div class="price-amount">₹90</div>
+          <div class="price-desc">Best value</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Worldwide Profiles</div>
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Results in minutes</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%20500%20Worldwide%20Likes%20for%20₹90" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d2">
+          <div class="price-tier">Popular</div>
+          <div class="price-qty">1000</div>
+          <div class="price-type">Likes</div>
+          <div class="price-amount">₹150</div>
+          <div class="price-desc">High impact</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Worldwide Profiles</div>
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Results in minutes</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%201000%20Worldwide%20Likes%20for%20₹150" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d3">
+          <div class="price-badge deal"><i class="fas fa-star"></i> Best Value</div>
+          <div class="price-tier">Mega</div>
+          <div class="price-qty">10K</div>
+          <div class="price-type">Likes</div>
+          <div class="price-amount">₹1,100</div>
+          <div class="price-desc">Maximum engagement</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-check"></i> Worldwide Profiles</div>
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Results in minutes</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%2010K%20Worldwide%20Likes%20for%20₹1100" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 6: Reel Views -->
+    <div class="pricing-panel" id="panel-ig-reels">
+      <p class="pricing-panel-title"><span>Instagram Reel Views</span> · Real Views · Instant Delivery · Sources: Explore Page · Browser · Feed</p>
+      <div class="pricing-cards cols-5">
+        <div class="price-card reveal">
+          <div class="price-badge try"><i class="fas fa-play"></i> Try Now</div>
+          <div class="price-tier">Basic</div>
+          <div class="price-qty">1K</div>
+          <div class="price-type">Views</div>
+          <div class="price-amount">₹20</div>
+          <div class="price-desc">Perfect to get started</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Super Instant</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%201K%20Reel%20Views%20for%20₹20" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d1">
+          <div class="price-tier">Starter</div>
+          <div class="price-qty">5K</div>
+          <div class="price-type">Views</div>
+          <div class="price-amount">₹80</div>
+          <div class="price-desc">Grow your reach</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Super Instant</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%205K%20Reel%20Views%20for%20₹80" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card featured reveal reveal-d2">
+          <div class="price-badge popular"><i class="fas fa-fire"></i> Popular</div>
+          <div class="price-tier">Growth</div>
+          <div class="price-qty">10K</div>
+          <div class="price-type">Views</div>
+          <div class="price-amount">₹150</div>
+          <div class="price-desc">Best for engagement</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Super Instant</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%2010K%20Reel%20Views%20for%20₹150" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d3">
+          <div class="price-tier">Viral</div>
+          <div class="price-qty">50K</div>
+          <div class="price-type">Views</div>
+          <div class="price-amount">₹700</div>
+          <div class="price-desc">Go viral</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Super Instant</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%2050K%20Reel%20Views%20for%20₹700" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="price-card reveal reveal-d4">
+          <div class="price-badge deal"><i class="fas fa-star"></i> Best Value</div>
+          <div class="price-tier">Mega</div>
+          <div class="price-qty">100K</div>
+          <div class="price-type">Views</div>
+          <div class="price-amount">₹1,200</div>
+          <div class="price-desc">Maximum exposure</div>
+          <div class="price-divider"></div>
+          <div class="price-features">
+            <div class="pf-item"><i class="fas fa-infinity"></i> Lifetime Guaranteed</div>
+            <div class="pf-item"><i class="fas fa-bolt"></i> Super Instant</div>
+          </div>
+          <a href="https://wa.me/917017727563?text=Hi,%20I%20want%20100K%20Reel%20Views%20for%20₹1200" class="price-cta" target="_blank">Order Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="pricing-note reveal">
+      All prices are inclusive of all charges · Instant results · <a href="https://wa.me/917017727563" target="_blank">WhatsApp us</a> for custom quantities or bulk discounts
+    </p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact-section" id="contact">
+  <div class="contact-3d-accent">
+    <div class="orb-ring"></div>
+    <div class="orb-ring"></div>
+  </div>
+  <div class="container">
+    <div class="section-label reveal">Get In Touch</div>
+    <div class="section-title reveal reveal-d1">Ready to <strong>Start Growing?</strong></div>
+    <p class="contact-desc reveal reveal-d2">Reach out through any channel below. We typically respond within minutes and will put together a custom package just for you.</p>
+    <div class="contact-grid">
+      <a href="https://wa.me/917017727563" class="contact-card cc-whatsapp reveal">
+        <i class="fab fa-whatsapp contact-card-icon"></i>
+        <h4>WhatsApp</h4>
+        <p>Fastest response. Chat directly on WhatsApp for instant quotes and support.</p>
+        <div class="contact-card-arrow">Message Us →</div>
+      </a>
+      <a href="https://instagram.com/insta_st0re3" class="contact-card cc-instagram reveal reveal-d1">
+        <i class="fab fa-instagram contact-card-icon"></i>
+        <h4>Instagram</h4>
+        <p>Slide into our DMs on Instagram for orders and enquiries.</p>
+        <div class="contact-card-arrow">Follow & DM →</div>
+      </a>
+      <a href="https://t.me/inframe_vamp" class="contact-card cc-telegram reveal reveal-d2">
+        <i class="fab fa-telegram contact-card-icon"></i>
+        <h4>Telegram</h4>
+        <p>Find us on Telegram for quick communication and bulk order discussions.</p>
+        <div class="contact-card-arrow">Open Telegram →</div>
+      </a>
+    <div class="contact-form-wrap reveal"><p class="form-heading">Send Us a Message</p><p class="form-sub">Fill in your details and we will reach out within minutes</p><form id="contactForm"><input type="hidden" name="access_key" value="497df76d-813b-408e-9a20-d0478544fb35"><input type="hidden" name="subject" value="New Enquiry - Social Slay Website"><input type="hidden" name="from_name" value="Social Slay Website"><input type="checkbox" name="botcheck" style="display:none"><div class="form-row"><div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="e.g. Rahul Sharma" required></div><div class="form-group"><label>WhatsApp Number</label><input type="tel" name="whatsapp" placeholder="e.g. +91 9876543210" required></div></div><div class="form-row"><div class="form-group"><label>Platform</label><select name="platform" required><option value="" disabled selected>Select platform</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option><option>Telegram</option><option>Other</option></select></div><div class="form-group"><label>Service Needed</label><select name="service" required><option value="" disabled selected>Select service</option><option>Followers</option><option>Likes</option><option>Views</option><option>Comments</option><option>Subscribers</option><option>Members</option><option>Custom Package</option></select></div></div><div class="form-group"><label>Message</label><textarea name="message" placeholder="Your goals, quantity, budget etc."></textarea></div><button type="submit" class="form-submit">Send Message &#8594;</button></form><div class="form-success" id="formSuccess"><div class="form-success-icon"><i class="fas fa-check"></i></div><h4>Message Sent!</h4><p>We have received your enquiry and will contact you on WhatsApp shortly.</p></div></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo"><em>Social</em> Media<span style="display:block;font-size:0.45em;letter-spacing:4px;color:var(--gold-light);font-weight:300;margin-top:-4px;">MANAGEMENT</span></a>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#announcements">Offers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://wa.me/917017727563" class="footer-social"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/insta_st0re3" class="footer-social"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/inframe_vamp" class="footer-social"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025–2026 Bilal. All rights reserved.</div>
+      <div class="footer-tag">Premium Social Media Growth</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  cursor.style.left=mx+'px'; cursor.style.top=my+'px';
+});
+function animateRing(){
+  rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+document.querySelectorAll('a,button,.faq-q,.service-tile').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{
+    cursor.style.width='20px'; cursor.style.height='20px';
+    ring.style.width='60px'; ring.style.height='60px';
+  });
+  el.addEventListener('mouseleave',()=>{
+    cursor.style.width='12px'; cursor.style.height='12px';
+    ring.style.width='40px'; ring.style.height='40px';
+  });
+});
+
+// Header scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled', scrollY>60);
+});
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+
+// Animate progress bars
+const barObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.pc-bar-fill').forEach(b=>{
+        b.style.width=b.style.width||'0';
+      });
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('.platform-card').forEach(c=>barObserver.observe(c));
+
+// Particles
+function createParticle(){
+  const p=document.createElement('div');
+  p.className='particle';
+  const size=Math.random()*4+2;
+  p.style.cssText=`width:${size}px;height:${size}px;left:${Math.random()*100}%;bottom:-20px;background:rgba(201,168,76,${Math.random()*0.4+0.1});animation-duration:${Math.random()*10+8}s;animation-delay:-${Math.random()*10}s`;
+  document.querySelector('.hero').appendChild(p);
+}
+for(let i=0;i<20;i++) createParticle();
+
+// Hamburger menu
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobileMenu');
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  mob.classList.toggle('open');
+  document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobileMenu() {
+  ham.classList.remove('open');
+  mob.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+var cf=document.getElementById("contactForm");if(cf){cf.addEventListener("submit",async function(e){e.preventDefault();var b=cf.querySelector(".form-submit");b.textContent="Sending...";b.disabled=true;try{const res=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(cf)))});const data=await res.json();if(data.success){cf.style.display="none";document.getElementById("formSuccess").style.display="block";}else{throw new Error(data.message);}}catch(err){b.textContent="Send Message";b.disabled=false;alert("Something went wrong. Please contact us on WhatsApp directly.");}});}
+</script>
+<!-- 3D WebGL + Theme Toggle -->
+<script>
+// ===== THEME TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const themeKnob = document.getElementById('themeKnob');
+let isLight = localStorage.getItem('theme') === 'light';
+
+function applyTheme(){
+  if(isLight){
+    document.body.classList.add('light');
+    themeKnob.textContent = '☾';
+    themeToggle.title = 'Switch to dark mode';
+  } else {
+    document.body.classList.remove('light');
+    themeKnob.textContent = '☀';
+    themeToggle.title = 'Switch to light mode';
+  }
+}
+applyTheme();
+themeToggle.addEventListener('click', () => {
+  isLight = !isLight;
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  applyTheme();
+});
+
+// ===== 3D WEBGL HERO BACKGROUND =====
+(function(){
+  const canvas = document.getElementById('hero3d');
+  if(!canvas) return;
+  
+  // Detect low-end device: skip on very small memory or slow CPU
+  const isLowEnd = navigator.hardwareConcurrency <= 2 || window.innerWidth < 400;
+  if(isLowEnd){
+    canvas.style.display = 'none';
+    return;
+  }
+
+  const gl = canvas.getContext('webgl', {
+    antialias: false, // faster
+    alpha: true,
+    premultipliedAlpha: false,
+    powerPreference: 'low-power'
+  });
+  if(!gl){ canvas.style.display='none'; return; }
+
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio, 1.5); // cap DPR for perf
+    canvas.width = canvas.offsetWidth * dpr;
+    canvas.height = canvas.offsetHeight * dpr;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Vertex shader
+  const vsSource = `
+    attribute vec3 aPos;
+    attribute float aSize;
+    attribute float aPhase;
+    uniform float uTime;
+    uniform vec2 uRes;
+    uniform vec2 uMouse;
+    void main(){
+      vec3 p = aPos;
+      float t = uTime + aPhase;
+      p.y += sin(t * 0.7 + aPos.x * 2.0) * 0.12;
+      p.x += cos(t * 0.5 + aPos.z * 1.5) * 0.08;
+      p.z += sin(t * 0.4 + aPos.y * 2.0) * 0.1;
+      // Mouse parallax
+      p.x += uMouse.x * 0.3 * (1.0 - p.z * 0.5);
+      p.y += uMouse.y * 0.2 * (1.0 - p.z * 0.5);
+      // Perspective
+      float fov = 1.8;
+      float depth = 3.5 + p.z;
+      vec2 projected = p.xy / depth * fov;
+      projected.x *= uRes.y / uRes.x;
+      gl_Position = vec4(projected, 0.0, 1.0);
+      gl_PointSize = aSize * 80.0 / depth;
+    }
+  `;
+
+  const fsSource = `
+    precision mediump float;
+    uniform vec3 uColor1;
+    uniform vec3 uColor2;
+    uniform float uTime;
+    void main(){
+      vec2 uv = gl_PointCoord - 0.5;
+      float d = length(uv);
+      if(d > 0.5) discard;
+      float alpha = (1.0 - d * 2.0) * 0.75;
+      // Soft glow
+      alpha *= smoothstep(0.5, 0.1, d);
+      vec3 col = mix(uColor1, uColor2, d * 2.0);
+      gl_FragColor = vec4(col, alpha * 0.55);
+    }
+  `;
+
+  function compileShader(type, src){
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, compileShader(gl.VERTEX_SHADER, vsSource));
+  gl.attachShader(prog, compileShader(gl.FRAGMENT_SHADER, fsSource));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+
+  // Generate particles — fewer on mobile
+  const isMobile = window.innerWidth < 768;
+  const N = isMobile ? 60 : 140;
+  const positions = new Float32Array(N * 3);
+  const sizes = new Float32Array(N);
+  const phases = new Float32Array(N);
+
+  for(let i=0; i<N; i++){
+    // Spread in 3D space
+    positions[i*3+0] = (Math.random()-0.5)*4;
+    positions[i*3+1] = (Math.random()-0.5)*3;
+    positions[i*3+2] = (Math.random()-0.5)*2;
+    sizes[i] = Math.random()*0.7+0.2;
+    phases[i] = Math.random()*Math.PI*2;
+  }
+
+  function mkBuf(data, loc, size){
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+    const a = gl.getAttribLocation(prog, loc);
+    gl.enableVertexAttribArray(a);
+    gl.vertexAttribPointer(a, size, gl.FLOAT, false, 0, 0);
+  }
+  mkBuf(positions, 'aPos', 3);
+  mkBuf(sizes, 'aSize', 1);
+  mkBuf(phases, 'aPhase', 1);
+
+  const uTime = gl.getUniformLocation(prog, 'uTime');
+  const uRes = gl.getUniformLocation(prog, 'uRes');
+  const uMouse = gl.getUniformLocation(prog, 'uMouse');
+  const uColor1 = gl.getUniformLocation(prog, 'uColor1');
+  const uColor2 = gl.getUniformLocation(prog, 'uColor2');
+
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+
+  let mouse = {x:0, y:0};
+  let targetMouse = {x:0, y:0};
+  window.addEventListener('mousemove', e=>{
+    targetMouse.x = (e.clientX/window.innerWidth)*2-1;
+    targetMouse.y = -((e.clientY/window.innerHeight)*2-1);
+  });
+
+  let lastTime = 0;
+  let raf;
+  
+  function render(t){
+    raf = requestAnimationFrame(render);
+    // Throttle to ~30fps on mobile for perf
+    if(isMobile && t - lastTime < 33) return;
+    lastTime = t;
+
+    const time = t * 0.001;
+    mouse.x += (targetMouse.x - mouse.x) * 0.05;
+    mouse.y += (targetMouse.y - mouse.y) * 0.05;
+
+    gl.clearColor(0,0,0,0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+    const isLightNow = document.body.classList.contains('light');
+    if(isLightNow){
+      gl.uniform3f(uColor1, 0.78, 0.65, 0.28); // gold
+      gl.uniform3f(uColor2, 0.55, 0.22, 0.85); // purple
+    } else {
+      gl.uniform3f(uColor1, 0.8, 0.66, 0.3);   // gold
+      gl.uniform3f(uColor2, 0.66, 0.24, 0.96);  // vivid purple
+    }
+    gl.uniform1f(uTime, time);
+    gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.POINTS, 0, N);
+  }
+
+  // Only render when hero is visible
+  const heroObserver = new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      raf = requestAnimationFrame(render);
+    } else {
+      cancelAnimationFrame(raf);
+    }
+  }, {threshold: 0.01});
+  heroObserver.observe(canvas.closest('.hero'));
+
+})();
+
+// ===== PRICING TABS =====
+function showPricing(panelId) {
+  document.querySelectorAll('.pricing-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + panelId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ===== FLOATING 3D RING (CSS-based, zero JS cost) added via ::after in services section =====
+</script>
+
+
+<!-- ===== PROOFS OVERLAY ===== -->
+<div id="po">
+  <div id="po-land">
+    <button class="po-backbtn" onclick="poClose()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to site
+    </button>
+    <div class="po-logo">Social Slay</div>
+    <div class="po-sub">by Bilal</div>
+    <div class="po-count"><span>101</span> Client Proofs</div>
+    <button class="po-startbtn" onclick="poStart()">View Proofs &rarr;</button>
+  </div>
+  <div id="po-view">
+    <div id="po-bars"></div>
+    <div id="po-hdr">
+      <div class="po-av">S</div>
+      <div class="po-meta">
+        <div class="po-hname">Social Slay</div>
+        <div class="po-badge">&#10022; Verified Results</div>
+      </div>
+      <div id="po-ctr">1 / 54</div>
+      <button id="po-close" onclick="poClose()">&#x2715;</button>
+    </div>
+    <div id="po-wrap">
+      <img id="po-img" src="" alt="Proof"/>
+      <video id="po-vid" playsinline autoplay muted loop></video>
+      <div id="po-spin"></div>
+    </div>
+    <div id="po-prev"><div class="po-flash" id="po-fl-prev"></div></div>
+    <div id="po-next"><div class="po-flash" id="po-fl-next"></div></div>
+    <div id="po-pause"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></div>
+    <div id="po-cap">
+      <div class="po-captxt" id="po-captxt"></div>
+      <div class="po-caplbl">Proof &#10022;</div>
+    </div>
+    <button id="po-mute" onclick="poToggleMute()">&#128263;</button>
+    <div class="po-hint">Tap right for next &middot; left to go back</div>
+    <div id="po-end">
+      <div class="po-endicon">&#10022;</div>
+      <div class="po-endtitle">That&rsquo;s all the proofs</div>
+      <div class="po-endsub">Real results, real clients</div>
+      <div class="po-endbtns">
+        <button class="po-endbtn" onclick="poRestart()">Watch Again</button>
+        <a href="#contact" class="po-endbtn primary" onclick="poClose()">Work With Me</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const PROOFS = [
+  "Proofs/proof1.jpg",
+  "Proofs/proof2.jpg",
+  "Proofs/proof3.jpg",
+  "Proofs/proof4.jpg",
+  "Proofs/proof5.jpg",
+  "Proofs/proof6.jpg",
+  "Proofs/proof7.jpg",
+  "Proofs/proof8.jpg",
+  "Proofs/proof9.jpg",
+  "Proofs/proof10.jpg",
+  "Proofs/proof11.jpg",
+  "Proofs/proof12.jpg",
+  "Proofs/proof13.jpg",
+  "Proofs/proof14.jpg",
+  "Proofs/proof15.jpg",
+  "Proofs/proof16.jpg",
+  "Proofs/proof17.jpg",
+  "Proofs/proof18.jpg",
+  "Proofs/proof19.jpg",
+  "Proofs/proof20.jpg",
+  "Proofs/proof21.jpg",
+  "Proofs/proof22.jpg",
+  "Proofs/proof23.jpg",
+  "Proofs/proof24.jpg",
+  "Proofs/proof25.jpg",
+  "Proofs/proof26.jpg",
+  "Proofs/proof27.jpg",
+  "Proofs/proof28.jpg",
+  "Proofs/proof29.jpg",
+  "Proofs/proof30.jpg",
+  "Proofs/proof31.jpg",
+  "Proofs/proof32.jpg",
+  "Proofs/proof33.jpg",
+  "Proofs/proof34.jpg",
+  "Proofs/proof35.jpg",
+  "Proofs/proof36.jpg",
+  "Proofs/proof37.jpg",
+  "Proofs/proof38.jpg",
+  "Proofs/proof39.jpg",
+  "Proofs/proof40.jpg",
+  "Proofs/proof41.jpg",
+  "Proofs/proof42.jpg",
+  "Proofs/proof43.jpg",
+  "Proofs/proof44.jpg",
+  "Proofs/proof45.jpg",
+  "Proofs/proof46.jpg",
+  "Proofs/proof47.jpg",
+  "Proofs/proof48.jpg",
+  "Proofs/proof49.jpg",
+  "Proofs/proof50.jpg",
+  "Proofs/proof51.jpg",
+  "Proofs/proof52.jpg",
+  "Proofs/proof53.jpg",
+  "Proofs/proof54.jpg",
+  "Proofs/proof55.jpg",
+  "Proofs/proof56.jpg",
+  "Proofs/proof57.jpg",
+  "Proofs/proof58.jpg",
+  "Proofs/proof59.jpg",
+  "Proofs/proof60.jpg",
+  "Proofs/proof61.jpg",
+  "Proofs/proof62.jpg",
+  "Proofs/proof63.jpg",
+  "Proofs/proof64.jpg",
+  "Proofs/proof65.jpg",
+  "Proofs/proof66.jpg",
+  "Proofs/proof67.jpg",
+  "Proofs/proof68.jpg",
+  "Proofs/proof69.jpg",
+  "Proofs/proof70.jpg",
+  "Proofs/proof71.jpg",
+  "Proofs/proof72.jpg",
+  "Proofs/proof73.jpg",
+  "Proofs/proof74.jpg",
+  "Proofs/proof75.jpg",
+  "Proofs/proof76.jpg",
+  "Proofs/proof77.jpg",
+  "Proofs/proof78.jpg",
+  "Proofs/proof79.jpg",
+  "Proofs/proof80.jpg",
+  "Proofs/proof81.jpg",
+  "Proofs/proof82.jpg",
+  "Proofs/proof83.jpg",
+  "Proofs/proof84.jpg",
+  "Proofs/proof85.jpg",
+  "Proofs/proof86.jpg",
+  "Proofs/proof87.jpg",
+  "Proofs/proof88.jpg",
+  "Proofs/proof89.jpg",
+  "Proofs/proof90.jpg",
+  "Proofs/proof91.jpg",
+  "Proofs/proof92.jpg",
+  "Proofs/proof93.jpg",
+  "Proofs/proof94.jpg",
+  "Proofs/proof95.jpg",
+  "Proofs/proof96.jpg",
+  "Proofs/proof97.jpg",
+  "Proofs/proof98.jpg",
+  "Proofs/proof99.jpg",
+  "Proofs/proof100.jpg",
+  "Proofs/proof101.jpg",
+];
+
+const VID = new Set(['mov','mp4','webm','MOV','MP4','WEBM']);
+const IMG_DUR = 4000, MAX_VID = 15000;
+let cur=0, poTimer=null, poPaused=false, poMuted=true, poDur=IMG_DUR;
+const g = id => document.getElementById(id);
+
+function isVid(s){ return VID.has(s.split('.').pop()); }
+
+function poBuildBars(){
+  const w=g('po-bars'); w.innerHTML='';
+  PROOFS.forEach((_,i)=>{
+    const s=document.createElement('div'); s.className='po-seg'; s.id='ps'+i;
+    const f=document.createElement('div'); f.className='po-segf';
+    s.appendChild(f); w.appendChild(s);
+  });
+}
+
+function poUpdateBars(idx){
+  PROOFS.forEach((_,i)=>{
+    const s=g('ps'+i); if(!s) return;
+    s.className='po-seg'+(i<idx?' done':i===idx?' active':'');
+    if(i===idx){
+      s.style.setProperty('--dur',(poDur/1000)+'s');
+      const f=s.querySelector('.po-segf');
+      f.style.animation='none'; f.offsetHeight; f.style.animation='';
+    }
+  });
+}
+
+function poShowSlide(idx){
+  clearTimeout(poTimer);
+  if(idx>=PROOFS.length){ poShowEnd(); return; }
+  if(idx<0) idx=0;
+  cur=idx;
+  const src=PROOFS[idx];
+  g('po-ctr').textContent=(idx+1)+' / '+PROOFS.length;
+  g('po-captxt').textContent='Client '+(idx+1);
+  g('po-spin').classList.add('visible');
+
+  if(isVid(src)){
+    g('po-img').style.display='none';
+    const v=g('po-vid'); v.style.display='block';
+    g('po-mute').classList.add('visible');
+    v.muted=poMuted; v.src=src; v.load();
+    const vidTimeout=setTimeout(()=>{ g('po-spin').classList.remove('visible'); poShowSlide(idx+1); },4000);
+    v.onloadedmetadata=()=>{
+      clearTimeout(vidTimeout);
+      poDur=Math.min(v.duration*1000,MAX_VID);
+      g('po-spin').classList.remove('visible');
+      poUpdateBars(idx); v.play().catch(()=>{ clearTimeout(vidTimeout); poShowSlide(idx+1); });
+      clearTimeout(poTimer); poTimer=setTimeout(()=>{if(!poPaused) poShowSlide(cur+1);},poDur);
+    };
+    v.onerror=()=>{ clearTimeout(vidTimeout); g('po-spin').classList.remove('visible'); poShowSlide(idx+1); };
+  } else {
+    const v=g('po-vid'); v.pause(); v.src=''; v.style.display='none';
+    g('po-mute').classList.remove('visible');
+    const im=g('po-img'); im.style.display='block';
+    im.onload=()=>{ g('po-spin').classList.remove('visible'); };
+    im.onerror=()=>{ g('po-spin').classList.remove('visible'); };
+    im.src=src;
+    poDur=IMG_DUR; poUpdateBars(idx);
+    clearTimeout(poTimer); poTimer=setTimeout(()=>{if(!poPaused) poShowSlide(cur+1);},IMG_DUR);
+  }
+  poPaused=false; g('po-pause').classList.remove('show');
+}
+
+function poShowEnd(){
+  clearTimeout(poTimer); g('po-vid').pause();
+  g('po-end').classList.add('active');
+  PROOFS.forEach((_,i)=>{ const s=g('ps'+i); if(s) s.className='po-seg done'; });
+}
+
+window.openProofs=function(e){
+  if(e) e.preventDefault();
+  g('po').classList.add('open');
+  document.body.style.overflow='hidden';
+  g('po-land').classList.remove('hidden');
+  g('po-view').classList.remove('active');
+  g('po-end').classList.remove('active');
+};
+window.poStart=function(){
+  g('po-land').classList.add('hidden');
+  g('po-view').classList.add('active');
+  poBuildBars(); poShowSlide(0);
+};
+window.poClose=function(){
+  clearTimeout(poTimer);
+  try{g('po-vid').pause();}catch(e){}
+  g('po').classList.remove('open');
+  document.body.style.overflow='';
+};
+window.poRestart=function(){ g('po-end').classList.remove('active'); poBuildBars(); poShowSlide(0); };
+window.poToggleMute=function(){
+  poMuted=!poMuted; g('po-vid').muted=poMuted;
+  g('po-mute').textContent=poMuted?'\uD83D\uDD07':'\uD83D\uDD0A';
+};
+
+// Tap nav
+g('po-prev').addEventListener('click',e=>{
+  e.stopPropagation(); e.preventDefault();
+  clearTimeout(poTimer);
+  const f=g('po-fl-prev'); f.classList.add('show'); setTimeout(()=>f.classList.remove('show'),150);
+  poShowSlide(cur-1);
+});
+g('po-next').addEventListener('click',e=>{
+  e.stopPropagation(); e.preventDefault();
+  clearTimeout(poTimer);
+  const f=g('po-fl-next'); f.classList.add('show'); setTimeout(()=>f.classList.remove('show'),150);
+  poShowSlide(cur+1);
+});
+
+// Hold to pause
+let holdT=null;
+g('po-view').addEventListener('pointerdown',()=>{
+  holdT=setTimeout(()=>{
+    poPaused=true; clearTimeout(poTimer); g('po-vid').pause();
+    g('po-pause').classList.add('show');
+    const s=g('ps'+cur); if(s) s.querySelector('.po-segf').style.animationPlayState='paused';
+  },200);
+});
+g('po-view').addEventListener('pointerup',()=>{
+  clearTimeout(holdT);
+  if(poPaused){
+    poPaused=false; g('po-pause').classList.remove('show');
+    const s=g('ps'+cur); if(s) s.querySelector('.po-segf').style.animationPlayState='running';
+    g('po-vid').play().catch(()=>{});
+    clearTimeout(poTimer); poTimer=setTimeout(()=>{if(!poPaused) poShowSlide(cur+1);},poDur*.5);
+  }
+});
+g('po-view').addEventListener('pointercancel',()=>{clearTimeout(holdT);});
+
+// Swipe
+let tx=0,tt=0;
+g('po-view').addEventListener('touchstart',e=>{tx=e.touches[0].clientX;tt=Date.now();},{passive:true});
+g('po-view').addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-tx;
+  if(Math.abs(dx)>50&&Date.now()-tt<400){ dx<0?poShowSlide(cur+1):poShowSlide(cur-1); }
+},{passive:true});
+
+// Keyboard
+document.addEventListener('keydown',e=>{
+  if(!g('po').classList.contains('open')) return;
+  if(e.key==='ArrowRight'||e.key===' ') poShowSlide(cur+1);
+  if(e.key==='ArrowLeft') poShowSlide(cur-1);
+  if(e.key==='Escape') poClose();
+});
+
+})();
+</script>
+
+<!-- Three.js for extra 3D shapes -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- Social Slay enhancements -->
+<script src="slay.js"></script>
+
+</body>
+</html>
