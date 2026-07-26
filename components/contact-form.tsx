@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { type FormEvent, useState } from "react";
+import { WhatsAppIcon } from "@/components/brand-icons";
 import { siteConfig } from "@/data/site";
 
 export function ContactForm() {
@@ -11,8 +12,9 @@ export function ContactForm() {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const message = [
-      "Hi SocialSlay, I would like a quote.",
+      `Hi ${siteConfig.name}, I would like a quote.`,
       `Name: ${form.get("name")}`,
+      `WhatsApp: ${form.get("phone")}`,
       `Platform: ${form.get("platform")}`,
       `Service: ${form.get("service")}`,
       `Budget / goal: ${form.get("message")}`,
@@ -25,7 +27,7 @@ export function ContactForm() {
     return (
       <div className="surface-card grid min-h-[30rem] place-items-center rounded-[2rem] p-8 text-center">
         <div>
-          <CheckCircle2 className="mx-auto text-[#25D366]" size={44} />
+          <CheckCircle2 className="mx-auto whatsapp-text" size={44} />
           <h3 className="mt-5 text-3xl font-bold tracking-[-0.04em]">Your brief is ready.</h3>
           <p className="mx-auto mt-3 max-w-md leading-7 text-muted">
             WhatsApp has opened with your details. Send the prepared message to start the conversation.
@@ -83,8 +85,8 @@ export function ContactForm() {
           className="form-control resize-none"
         />
       </Field>
-      <button type="submit" className="button-primary mt-6 w-full">
-        Build my WhatsApp brief <ArrowUpRight size={16} />
+      <button type="submit" className="button-whatsapp mt-6 w-full">
+        <WhatsAppIcon size={16} /> Build my WhatsApp brief <ArrowUpRight size={16} />
       </button>
       <p className="mt-4 text-center text-xs leading-5 faint-text">
         Submitting prepares a WhatsApp message. Your information is not stored on this website.

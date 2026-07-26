@@ -1,51 +1,68 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
+/**
+ * Desktop pointer accent. Written with a single rAF loop and direct transform
+ * writes: no spring library, no blend modes, and nothing that forces the rest
+ * of the page onto a new compositing layer.
+ */
 export function CustomCursor() {
-  const x = useMotionValue(-100);
-  const y = useMotionValue(-100);
-  const springX = useSpring(x, { stiffness: 420, damping: 32, mass: 0.45 });
-  const springY = useSpring(y, { stiffness: 420, damping: 32, mass: 0.45 });
-  const [visible, setVisible] = useState(false);
-  const [active, setActive] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) return;
+    const element = ref.current;
+    if (!element) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
+    let currentX = -100;
+    let currentY = -100;
+    let targetX = -100;
+    let targetY = -100;
+    let frame = 0;
+
+    const render = () => {
+      currentX += (targetX - currentX) * 0.2;
+      currentY += (targetY - currentY) * 0.2;
+      element.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      frame = requestAnimationFrame(render);
+    };
+
     const onMove = (event: MouseEvent) => {
-      x.set(event.clientX);
-      y.set(event.clientY);
-      setVisible(true);
+      targetX = event.clientX;
+      targetY = event.clientY;
+      element.dataset.visible = "true";
     };
+
     const onOver = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      setActive(Boolean(target.closest("a, button, input, textarea, select, [data-cursor]")));
+      const target = event.target;
+      const interactive =
+        target instanceof Element &&
+        target.closest("a, button, input, textarea, select, [data-cursor]") !== null;
+      element.dataset.active = interactive ? "true" : "false";
     };
-    const onLeave = () => setVisible(false);
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseover", onOver);
+
+    const onLeave = () => {
+      element.dataset.visible = "false";
+    };
+
+    window.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("mouseover", onOver, { passive: true });
     document.addEventListener("mouseleave", onLeave);
+    frame = requestAnimationFrame(render);
+
     return () => {
+      cancelAnimationFrame(frame);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
       document.removeEventListener("mouseleave", onLeave);
     };
-  }, [x, y]);
+  }, []);
 
   return (
-    <motion.div
-      aria-hidden
-      className="custom-cursor pointer-events-none fixed left-0 top-0 z-[120] hidden items-center justify-center mix-blend-screen md:flex"
-      style={{ x: springX, y: springY, translateX: "-50%", translateY: "-50%" }}
-      animate={{ opacity: visible ? 1 : 0 }}
-    >
-      <motion.div
-        className="rounded-full border border-[#E1306C]/70 bg-[#E1306C]/10 shadow-[0_0_25px_rgba(225,48,108,.35)]"
-        animate={{ width: active ? 52 : 18, height: active ? 52 : 18 }}
-        transition={{ duration: 0.22 }}
-      />
-      <span className="absolute h-1 w-1 rounded-full bg-[color:var(--cursor-dot)]" />
-    </motion.div>
+    <div ref={ref} aria-hidden className="custom-cursor">
+      <span className="custom-cursor__ring" />
+      <span className="custom-cursor__dot" />
+    </div>
   );
 }

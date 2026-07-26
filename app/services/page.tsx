@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, Check, Layers3, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Check, Layers3 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/brand-icons";
 import { ContactCta } from "@/components/contact-cta";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
@@ -7,7 +8,8 @@ import { services, siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Social growth, website design, development, content planning, and branding services from SocialSlay.",
+  description:
+    "Social growth, website design, development, content planning, and branding services from Social.bil.",
   alternates: { canonical: "/services/" },
 };
 
@@ -47,7 +49,7 @@ export default function ServicesPage() {
                   <div className="mt-7 grid gap-2 sm:grid-cols-2">
                     {tags.map((tag) => (
                       <p key={tag} className="flex items-center gap-2 text-sm text-muted">
-                        <Check size={14} className="text-[#25D366]" /> {tag}
+                        <Check size={14} className="text-[color:var(--ig-pink)]" /> {tag}
                       </p>
                     ))}
                   </div>
@@ -73,7 +75,7 @@ export default function ServicesPage() {
               ["04", "Stay supported", "Direct support remains available throughout delivery and eligible refill windows and even after delivery."],
             ].map(([number, title, copy]) => (
               <div key={number} className="surface-card rounded-3xl p-7" data-reveal>
-                <p className="font-mono text-sm text-[#E1306C]">{number}</p>
+                <p className="font-mono text-sm text-[color:var(--ig-pink)]">{number}</p>
                 <h3 className="mt-8 text-xl font-bold">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-muted">{copy}</p>
               </div>
@@ -86,7 +88,7 @@ export default function ServicesPage() {
         <div className="section-shell">
           <div className="surface-card flex flex-col gap-8 rounded-[2rem] p-7 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex max-w-2xl items-start gap-5">
-              <span className="grid h-13 w-13 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-[#F77737] via-[#E1306C] to-[#833AB4] text-white">
+              <span className="brand-mark grid h-14 w-14 shrink-0 place-items-center rounded-2xl">
                 <Layers3 size={22} />
               </span>
               <div>
@@ -94,8 +96,8 @@ export default function ServicesPage() {
                 <p className="mt-2 leading-7 text-muted">Ask for a custom plan for creators, launch, brand, or agency package.</p>
               </div>
             </div>
-            <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer" className="button-primary shrink-0">
-              <MessageCircle size={16} /> Build a custom package <ArrowUpRight size={15} />
+            <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer" className="button-whatsapp shrink-0">
+              <WhatsAppIcon size={16} /> Build a custom package <ArrowUpRight size={15} />
             </a>
           </div>
         </div>

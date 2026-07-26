@@ -1,5 +1,4 @@
 import {
-  Camera,
   CalendarRange,
   CirclePlay,
   Code2,
@@ -7,9 +6,9 @@ import {
   Monitor,
   Music2,
   Palette,
-  Send,
   Users,
 } from "lucide-react";
+import { InstagramIcon, TelegramIcon } from "@/components/brand-icons";
 
 export const siteConfig = {
   name: "Social.bil",
@@ -36,7 +35,7 @@ export const services = [
     description:
       "Audience growth packages shaped around your region, speed, refill needs, and campaign goals. Ideal for creators, artists, brands, and verified profiles.",
     tags: ["Followers", "Likes", "Views", "reposts and more+"],
-    icon: Camera,
+    icon: InstagramIcon,
     accent: "#E1306C",
   },
   {
@@ -72,7 +71,7 @@ export const services = [
     description:
       "Campaigns for communities, announcement channels, creator groups, and high-frequency content publishers.",
     tags: ["Members", "Views", "Reactions", "Reach"],
-    icon: Send,
+    icon: TelegramIcon,
     accent: "#229ED9",
   },
   {
@@ -82,7 +81,7 @@ export const services = [
       "Responsive website design, interaction concepts, landing pages, and content systems built to make the next action obvious.",
     tags: ["UI/UX", "Responsive", "Conversion", "Motion"],
     icon: Monitor,
-    accent: "#FFFFFF",
+    accent: "#405DE6",
   },
   {
     title: "Website Development",
@@ -114,12 +113,12 @@ export const services = [
 ];
 
 export const platforms = [
-  { name: "Instagram", icon: Camera, color: "#E1306C" },
-  { name: "TikTok", icon: Music2, color: "#00F2EA" },
+  { name: "Instagram", icon: InstagramIcon, color: "#E1306C" },
+  { name: "TikTok", icon: Music2, color: "#00C8C0" },
   { name: "YouTube", icon: CirclePlay, color: "#FF0033" },
   { name: "Facebook", icon: Users, color: "#1877F2" },
-  { name: "Telegram", icon: Send, color: "#229ED9" },
-  { name: "Web", icon: Globe2, color: "#FFFFFF" },
+  { name: "Telegram", icon: TelegramIcon, color: "#229ED9" },
+  { name: "Web", icon: Globe2, color: "#833AB4" },
 ];
 
 export const testimonials = [

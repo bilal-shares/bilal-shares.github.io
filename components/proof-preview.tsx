@@ -25,9 +25,9 @@ export function ProofPreview() {
             className="h-auto w-full transition duration-700 group-hover:scale-[1.035]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
-          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/90 to-transparent p-5 pt-20">
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/90 to-transparent p-5 pt-20 text-white">
             <div>
-              <p className="text-xs uppercase tracking-[0.14em] text-[#FCAF45]">{proof.category}</p>
+              <p className="text-xs uppercase tracking-[0.14em] text-[color:var(--ig-yellow)]">{proof.category}</p>
               <p className="mt-1 font-semibold">Verified result</p>
             </div>
             <ArrowUpRight size={18} />

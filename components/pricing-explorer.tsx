@@ -1,29 +1,28 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { useState } from "react";
+import { WhatsAppIcon } from "@/components/brand-icons";
 import { pricingGroups } from "@/data/pricing";
 import { siteConfig } from "@/data/site";
 
 export function PricingExplorer({ compact = false }: { compact?: boolean }) {
-  const visibleGroups = pricingGroups;
-  const [activeId, setActiveId] = useState(visibleGroups[0].id);
-  const active = visibleGroups.find((group) => group.id === activeId) ?? visibleGroups[0];
-  const plans = active.plans;
+  const [activeId, setActiveId] = useState(pricingGroups[0].id);
+  const active = pricingGroups.find((group) => group.id === activeId) ?? pricingGroups[0];
+  const features = compact ? active.features.slice(0, 3) : active.features;
 
   return (
     <div>
-      <div className="mb-10 flex gap-2 overflow-x-auto pb-3" aria-label="Pricing categories">
-        {visibleGroups.map((group) => (
+      {/* Every category is visible at once — the row wraps instead of
+          scrolling sideways, so nothing is hidden off-screen. */}
+      <div className="chip-row" role="group" aria-label="Pricing categories">
+        {pricingGroups.map((group) => (
           <button
             key={group.id}
             type="button"
-            className={`shrink-0 rounded-full border px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.11em] transition ${
-              group.id === activeId
-                ? "border-[color:var(--foreground)] bg-[color:var(--foreground)] text-[color:var(--background)]"
-                : "border-[color:var(--line)] bg-[color:var(--soft-bg)] text-muted hover:border-[#E1306C]/40 hover:text-[color:var(--foreground)]"
-            }`}
+            className="chip"
+            data-active={group.id === activeId}
+            aria-pressed={group.id === activeId}
             onClick={() => setActiveId(group.id)}
           >
             {group.label}
@@ -31,68 +30,61 @@ export function PricingExplorer({ compact = false }: { compact?: boolean }) {
         ))}
       </div>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={active.id}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
-          transition={{ duration: 0.35 }}
-        >
-          <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h3 className="text-2xl font-bold tracking-[-0.04em] sm:text-3xl">{active.title}</h3>
-              <p className="mt-2 text-sm text-muted">{active.note}</p>
-            </div>
-            
+      <div key={active.id} className="pricing-panel mt-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h3 className="text-xl font-bold tracking-[-0.04em] sm:text-2xl">{active.title}</h3>
+            <p className="mt-1.5 max-w-2xl text-sm leading-6 text-muted">{active.note}</p>
           </div>
+        </div>
 
-          <div className={`grid gap-4 ${plans.length >= 4 ? "md:grid-cols-2 xl:grid-cols-4" : "lg:grid-cols-3"}`}>
-            {plans.map((plan) => {
-              const message = encodeURIComponent(
-                `Hi, I want ${plan.quantity} ${plan.type} (${active.label}) for ${plan.price}.`,
-              );
-              return (
-                <article
-                  key={`${active.id}-${plan.quantity}`}
-                  className={`surface-card relative flex min-h-[28rem] flex-col rounded-[1.6rem] p-6 transition duration-500 hover:-translate-y-2 ${
-                    plan.featured ? "border-[#E1306C]/50 bg-[#E1306C]/[0.08]" : ""
-                  }`}
+        {/* Shared inclusions live here once instead of being repeated inside
+            every card — that is what let the cards get short enough to fit. */}
+        <div className="feature-strip mt-4">
+          {features.map((feature) => (
+            <span key={feature} className="feature-pill">
+              <Check size={13} className="whatsapp-text" /> {feature}
+            </span>
+          ))}
+        </div>
+
+        <div className="price-grid mt-6">
+          {active.plans.map((plan) => {
+            const message = encodeURIComponent(
+              `Hi, I want ${plan.quantity} ${plan.type} (${active.label}) for ${plan.price}.`,
+            );
+            return (
+              <article
+                key={`${active.id}-${plan.quantity}`}
+                className={`surface-card price-card ${plan.featured ? "price-card--featured" : ""}`}
+              >
+                <div className="flex min-h-[1.4rem] items-start justify-between gap-2">
+                  <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] faint-text">{plan.tier}</p>
+                  {plan.badge && <span className="price-badge">{plan.badge}</span>}
+                </div>
+
+                <div className="mt-3 flex items-baseline gap-1.5">
+                  <p className="text-3xl font-black tracking-[-0.06em] sm:text-4xl">{plan.quantity}</p>
+                  <p className="text-xs text-muted sm:text-sm">{plan.type}</p>
+                </div>
+
+                <p className="price-value mt-2 text-2xl font-bold sm:text-3xl">{plan.price}</p>
+                <p className="mt-1.5 text-xs leading-5 faint-text">{plan.description}</p>
+
+                <a
+                  href={`${siteConfig.whatsapp}?text=${message}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="button-whatsapp button-sm mt-4 w-full"
+                  aria-label={`Order ${plan.quantity} ${plan.type} for ${plan.price} on WhatsApp`}
                 >
-                  {plan.badge && (
-                    <span className="mb-8 w-fit rounded-full border border-[#F77737]/30 bg-[#F77737]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#FCAF45]">
-                      {plan.badge}
-                    </span>
-                  )}
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] faint-text">{plan.tier}</p>
-                  <div className="mt-5 flex items-end gap-2">
-                    <p className="text-5xl font-black tracking-[-0.07em]">{plan.quantity}</p>
-                    <p className="pb-1 text-sm text-muted">{plan.type}</p>
-                  </div>
-                  <p className="mt-5 text-3xl font-bold gradient-text">{plan.price}</p>
-                  <p className="mt-2 text-sm faint-text">{plan.description}</p>
-                  <div className="my-6 h-px bg-[color:var(--line)]" />
-                  <div className="space-y-3">
-                    {active.features.slice(0, compact ? 3 : 4).map((feature) => (
-                      <p key={feature} className="flex items-center gap-2 text-sm text-muted">
-                        <Check size={15} className="text-[#25D366]" /> {feature}
-                      </p>
-                    ))}
-                  </div>
-                  <a
-                    href={`${siteConfig.whatsapp}?text=${message}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={plan.featured ? "button-primary mt-auto" : "button-secondary mt-auto"}
-                  >
-                    Order on WhatsApp <ArrowUpRight size={15} />
-                  </a>
-                </article>
-              );
-            })}
-          </div>
-        </motion.div>
-      </AnimatePresence>
+                  <WhatsAppIcon size={14} /> Order
+                </a>
+              </article>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

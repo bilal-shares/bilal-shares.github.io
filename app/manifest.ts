@@ -1,16 +1,17 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/data/site";
 
 export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "SocialSlay",
-    short_name: "SocialSlay",
-    description: "Premium social media growth and creative services.",
+    name: `${siteConfig.name} | Premium Social Media Growth`,
+    short_name: siteConfig.name,
+    description: siteConfig.description,
     start_url: "/",
     display: "standalone",
-    background_color: "#0A0F1F",
-    theme_color: "#0A0F1F",
+    background_color: "#fafafa",
+    theme_color: "#e1306c",
     icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
   };
 }

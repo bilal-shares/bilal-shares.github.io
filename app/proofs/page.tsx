@@ -5,7 +5,7 @@ import { ContactCta } from "@/components/contact-cta";
 
 export const metadata: Metadata = {
   title: "Client Proofs",
-  description: "Browse SocialSlay delivery proofs across Instagram, Facebook, and YouTube campaigns.",
+  description: "Browse Social.bil delivery proofs across Instagram, Facebook, and YouTube campaigns.",
   alternates: { canonical: "/proofs/" },
 };
 
@@ -16,7 +16,7 @@ export default function ProofsPage() {
         eyebrow="Proof archive"
         index="03"
         title="Receipts, not vague success stories."
-        copy="Search, filter, and expand 95 delivery snapshots from the original SocialSlay proof library."
+        copy="Search, filter, and expand 95 delivery snapshots from the Social.bil proof library."
       />
       <section className="section-pad pt-10">
         <div className="section-shell">
